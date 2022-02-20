@@ -1,0 +1,92 @@
+[
+    "Replicate",
+    {
+        "from": "ID",
+        "to": "Run Date"
+    },
+    "Analysis",
+    "Analysis Status",
+    "Mass Spec",
+    "Easotope Name",
+    "Sample Type",
+    "Corr Interval",
+    "Acid Temp",
+    "d13C VPDB (Raw)",
+    "d13C VPDB (Raw) SE",
+    "d18O VPDB (Raw)",
+    "d18O VPDB (Raw) SE",
+    "d18O VSMOW (Raw)",
+    "d18O VSMOW (Raw) SE",
+    "d47 WG (Raw)",
+    "d47 WG (Raw) SE",
+    "D47 WG (Raw)",
+    "D47 WG (Raw) SE",
+    "d48 WG (Raw)",
+    "d48 WG (Raw) SE",
+    "D48 WG (Raw)",
+    "D48 WG (Raw) SE",
+    "d49 WG (Raw)",
+    "d49 WG (Raw) SE",
+    "D49 WG (Raw)",
+    "D49 WG (Raw) SE",
+    "D47 Nonlinearity Slope",
+    "D47 Nonlinearity Intercepts",
+    "D47 WG (HG)",
+    "D47 ETF Slope",
+    "D47 ETF Intercept",
+    "D47 CDES (ETF)",
+    {
+        "from": "D47 AFF",
+        "to": "D47 Acid Fractionation Factor"
+    },
+    "D48 Nonlinearity Slope",
+    "D48 Nonlinearity Intercepts",
+    "D48 WG (HG)",
+    "D48 ETF Slope",
+    "D48 ETF Intercept",
+    "D48 CDES (ETF)",
+    {
+        "from": "D48 AFF",
+        "to": "D48 Acid Fractionation Factor"
+    },
+    {
+        "from": "d13C VPDB (Final)",
+        "to": "δ13C VPDB (Final)"
+    },
+    "δ13C VPDB (Final) average",
+    "δ13C VPDB (Final) SD",
+    {
+        "from": "d18O VPDB (Final)",
+        "to": "δ18O VPDB (Final)"
+    },
+    "δ18O VPDB (Final) average",
+    "δ18O VPDB (Final) SD",
+    {
+        "from": "d18O VSMOW (Final)",
+        "to": "δ18O VSMOW (Final)"
+    },
+    "δ18O VSMOW (Final) average",
+    "δ18O VSMOW (Final) SD",
+    {
+        "from": "D47 CDES (Final)",
+        "to": "Δ47 CDES (Final)"
+    },
+    "Δ47 CDES (Final) average",
+    "Δ47 CDES (Final) SE",
+    {
+        "from": "D48 CDES (Final)",
+        "to": "Δ48 CDES (Final)"
+    },
+    "Δ48 CDES (Final) average",
+    "Δ48 CDES (Final) SE",
+    "Temperature Calibration slope (Anderson et al. 2021)",
+    "Temperature Calibration intercept (Anderson et al. 2021)",
+    "Temp [°C]",
+    "Temp [°C] average",
+    "+/- SE",
+    "Predicted Alpha (NOTE: mineral specific)",
+    "Predicted Alpha average (NOTE: mineral specific)",
+    "water δ18O VSMOW",
+    "water δ18O VSMOW average",
+    "water δ18O VSMOW standard deviation"
+]
