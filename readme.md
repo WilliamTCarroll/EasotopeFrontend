@@ -16,23 +16,18 @@ NOTE: Many of the sections below are general notes, and will be modified/cleaned
 
 ## GUI 
 - Ability to remove specific replicates from a sample, *required* reason
-- 
-
 
 ## Process
 1. ~Import spreadsheet from Easotope~
 2. ~Split into samples with list of replicates on each~
 3. Calculations
     - Averages and standard deviations visible
-    - 
     - Some material specific
 4. Optional removal with notes of replicants
 5. Write calculations back onto template spreadsheet
 
 
-## Config File
-- The order determines the
-
+## Column Config File
 ```js
 [
     // The order here determines the output order
