@@ -1,4 +1,4 @@
-import { Range, utils, WorkSheet } from "xlsx";
+import { CellObject, Range, utils, WorkSheet } from "xlsx";
 import { ColumnConfig } from "./columnConfig";
 
 /**
@@ -64,24 +64,21 @@ export class Sample {
                     // Ensure the sample is set
                     sample = sample || new Sample();
                     if (val && head) {
-                        sample[head] = val.v;
+                        sample[head] = getValue(val);
                     }
                 } else {
                     // Ensure the replicate is set
                     replicate = replicate || new Replicate();
                     if (val && head) {
+                        // Left as a switch, assuming that other cases are required
                         switch (head) {
-                            case "ID":
-                                replicate[head] = new Date(val.v);
-                                break;
                             case "Disabled":
+                                // Sometimes, the `=FALSE()` resolves as `0`, or as `FALSE`
                                 replicate[head] = !!val.v;
                                 break;
+                            default:
+                                replicate[head] = getValue(val);
                         }
-                        const headOut = head === "ID" ? "Run Date" : head;
-                        // Sometimes, the `=FALSE()` resolves as `0`, or as `FALSE`
-                        const valOut = head === "Disabled" ? !!val.v : val.v;
-                        replicate[head] = valOut;
                     }
                 }
             }
@@ -91,6 +88,13 @@ export class Sample {
 
     // Non-Static methods
 
+}
+/**
+ *  Attempt to grab the stored value in the CellObject
+ *  This checks if `v` is a key on the object, and returns it if so.
+ */
+function getValue(inp: CellObject | any): any {
+    return inp.v === undefined ? inp : inp.v;
 }
 
 /**
