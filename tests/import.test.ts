@@ -6,7 +6,7 @@ import { readFile, writeFile } from "fs/promises";
 /* 
     This test is primarily for the basic import.
 */
-const BASIC_PATH = "./tests/basic/";
+const BASIC_PATH = "./tests/import/";
 
 describe("Basic Test", () => {
 
