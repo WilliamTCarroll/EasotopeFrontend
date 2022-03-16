@@ -1,4 +1,3 @@
-/*eslint no-redeclare: "allow"*/
 import { loadSampleFile } from "./common";
 import assert from "assert/strict";
 import { readFile, writeFile } from "fs/promises";
