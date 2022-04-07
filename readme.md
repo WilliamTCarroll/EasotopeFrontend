@@ -40,6 +40,15 @@ NOTE: Many of the sections below are general notes, and will be modified/cleaned
         // And change it to "to" on the output (and display as this, too)
         "to": "δ13C VPDB (Final)"
     },
+    {
+        "from": "d18O VPDB (Final)",
+        "to": "δ18O VPDB (Final)",
+        // Some fields may have an array of summary types
+        "summary": [
+            "average",
+            "stdDev"
+        ]
+    },
     // If not found on the input, these are still added to the output columns.
     // They may be used for calculations, or placeholders.
     "δ13C VPDB (Final) SD",
