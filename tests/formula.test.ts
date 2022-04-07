@@ -1,6 +1,8 @@
 /*eslint no-redeclare: "allow"*/
 import assert from "assert/strict";
 import { stdDev, stdErr, average, formula } from "../src/formula"
+import { parseOneSummary, parseSummary, SummaryType } from "../src/columnConfig";
+const { Average, StdDev, StdErr } = SummaryType;
 
 describe("Formula Tests", () => {
 
@@ -31,32 +33,40 @@ describe("Formula Tests", () => {
         }
     })
     it("Search Function", () => {
+        assert.strictEqual(parseOneSummary("stdErr"), StdErr);
+        assert.strictEqual(parseOneSummary("StandardErr"), StdErr);
+        // Ensure the multiples work
+        assert.deepEqual(parseSummary(["average"]), [Average]);
+        assert.deepEqual(parseSummary(["average", "StdErr"]), [Average, StdErr]);
+        // Several tests here, to ensure various inputs are taken
+        assert.deepEqual(parseSummary(["stDev"]), [StdDev]);
+        assert.deepEqual(parseSummary(["stdDev"]), [StdDev]);
+        assert.deepEqual(parseSummary(["standardDeviation"]), [StdDev]);
+        // We must ensure we handle the most proper case:
+        // SaRcAsMcAsE
+        assert.strictEqual(parseOneSummary("StAnDaRdDeViAtIoN"), StdDev);
+
+        assert.strictEqual((parseOneSummary("RandoCardrissian") as any)["message"], "Unknown formula: RandoCardrissian");
+        assert.deepEqual((parseSummary(["average", "RandoCardrissian"]) as any)["message"], "Unknown formula: RandoCardrissian");
+
+    })
+    it("Function Enum", () => {
         let range = "B1:B5";
         {
             let exp = "=AVERAGE(B1:B5)"
-            let out = formula("average", range);
+            let out = formula(Average, range);
             assert.strictEqual(out, exp);
         }
         {
-            // Several tests here, to ensure various inputs are taken
             let exp = "=STDEV(B1:B5)"
-            assert.strictEqual(formula("stDev", range), exp);
-            assert.strictEqual(formula("stdDev", range), exp);
-            assert.strictEqual(formula("standardDeviation", range), exp);
-            // We must ensure we handle the most proper case:
-            // SaRcAsMcAsE
-            assert.strictEqual(formula("StAnDaRdDeViAtIoN", range), exp);
+            assert.strictEqual(formula(StdDev, range), exp);
         }
         {
             let exp = "=STDEV(B1:B5)/SQRT(COUNT(B1:B5))"
-            let out = formula("stdErr", range);
+            let out = formula(StdErr, range);
             assert.strictEqual(out, exp);
         }
-        {
-            let exp = Error("Unknown formula: RandoCardrissian");
-            let out: any = formula("RandoCardrissian", "Whatever");
-            assert.strictEqual(out.message, exp.message);
-        }
+
     })
 
 })

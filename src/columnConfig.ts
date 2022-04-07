@@ -7,10 +7,44 @@ import { CellObject } from "xlsx";
 export class ColumnConfig {
     entries: Entry[]
 
-    /** Construct ColumnConfig from the given json entries */
+    /**
+     *  Construct ColumnConfig from the given json entries
+     *  @throws If any of the ColumnConfig entries are invalid
+     */
     constructor(json: string) {
         const entries = JSON.parse(json);
-        this.entries = Object.assign([], entries);
+        const errs = [];
+        this.entries = [];
+        for (const entry of entries) {
+            const out = ColumnConfig.parseEntry(entry);
+            if (out instanceof Error) {
+                errs.push(out);
+            } else {
+                this.entries.push(out);
+            }
+        }
+        // Any errors should concern us
+        if (errs.length > 0) {
+            throw errs;
+        }
+    }
+    /** Parse the config entry and returns an error on invalid summary  */
+    public static parseEntry(inp: any): Entry | Error {
+        const from = inp["from"];
+        if (!!from) {
+            const to = inp["to"];
+            const sumBefore = inp["summary"];
+            const summary = parseSummary(sumBefore);
+
+            if (summary instanceof Error) {
+                return summary
+            } else {
+                return { from, to, summary };
+            }
+        } else {
+            return inp as Entry
+        }
+
     }
     /** Get the input column name for the given entry */
     static entryFrom(entry: Entry): string {
@@ -18,7 +52,7 @@ export class ColumnConfig {
     }
     /** Get the output column name for the given entry */
     static entryOut(entry: Entry): string {
-        return typeof entry === "string" ? entry : entry.to;
+        return typeof entry === "string" ? entry : entry.to || entry.from;
     }
     /**
      * Attempt to find the column header in the stored entries.\
@@ -47,4 +81,51 @@ export class ColumnConfig {
     }
 }
 /** An entry found in the `ColumnConfig` file */
-type Entry = string | { from: string, to: string };
+type Entry = string |
+{ from: string, to: string | undefined, summary: SummaryType[] | undefined };
+/** The kinds of Summary that could possibly be done for this field */
+export enum SummaryType {
+    Average,
+    StdDev,
+    StdErr
+}
+/** 
+ * Attempt to parse a list of summaries from the given array
+ * The first one to fail will return an error
+ */
+export function parseSummary(inp: string[]): SummaryType[] | Error | undefined {
+    // If this is blank, it's clearly NOT anything to worry about
+    if (!inp) { return undefined; }
+    const out = [];
+    for (const entry of inp) {
+        const res = parseOneSummary(entry);
+        if (res !== undefined) {
+            if (res instanceof Error) {
+                return res;
+            }
+            out.push(res);
+        }
+    }
+    return out;
+}
+/** Attempt to parse the given string as a summary */
+export function parseOneSummary(inp: string): SummaryType | Error | undefined {
+    if (!inp) { return undefined; }
+    // Replace the various longer options with abbreviations (simpler switch)
+    const low = inp.toLowerCase()
+        .replace("standard", "std")
+        .replace("error", "err")
+        .replace("deviation", "dev");
+    switch (low) {
+        case "average":
+            return SummaryType.Average;
+        case "stdev":
+        case "stddev":
+            return SummaryType.StdDev;
+        case "sterr":
+        case "stderr":
+            return SummaryType.StdErr;
+        default:
+            return Error(`Unknown formula: ${inp}`);
+    }
+}

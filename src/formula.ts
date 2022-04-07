@@ -1,20 +1,18 @@
+import { SummaryType } from "./columnConfig";
 
 /**
  *  Attemt to generate the summary formula for the given range.\
  *  An error is returned if the `formulaName` is not recognized
  */
-export function formula(formulaName: string, range: string): string | Error {
-    const low = formulaName.toLowerCase();
-    switch (low) {
-        case "average":
-            return average(range);
-        case "stdev": case "stddev": case "standarddeviation":
-            return stdDev(range);
-        case "sterr": case "stderr" || (low.startsWith("st") && low.endsWith("error")):
-            return stdErr(range);
-        default:
-            return Error(`Unknown formula: ${formulaName}`);
+export function formula(formula: SummaryType, range: string): string {
 
+    switch (formula) {
+        case SummaryType.Average:
+            return average(range);
+        case SummaryType.StdDev:
+            return stdDev(range);
+        case SummaryType.StdErr:
+            return stdErr(range);
     }
 }
 /** Average for the given range: `=AVERAGE` */

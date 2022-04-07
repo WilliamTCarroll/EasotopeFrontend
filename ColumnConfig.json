@@ -11,23 +11,68 @@
     "Sample Type",
     "Corr Interval",
     "Acid Temp",
-    "d13C VPDB (Raw)",
+    {
+        "from": "d13C VPDB (Raw)",
+        "summary": [
+            "stdErr"
+        ]
+    },
     "d13C VPDB (Raw) SE",
-    "d18O VPDB (Raw)",
+    {
+        "from": "d18O VPDB (Raw)",
+        "summary": [
+            "stdErr"
+        ]
+    },
     "d18O VPDB (Raw) SE",
-    "d18O VSMOW (Raw)",
+    {
+        "from": "d18O VSMOW (Raw)",
+        "summary": [
+            "stdErr"
+        ]
+    },
     "d18O VSMOW (Raw) SE",
-    "d47 WG (Raw)",
+    {
+        "from": "d47 WG (Raw)",
+        "summary": [
+            "stdErr"
+        ]
+    },
     "d47 WG (Raw) SE",
-    "D47 WG (Raw)",
+    {
+        "from": "D47 WG (Raw)",
+        "summary": [
+            "stdErr"
+        ]
+    },
     "D47 WG (Raw) SE",
-    "d48 WG (Raw)",
+    {
+        "from": "d48 WG (Raw)",
+        "summary": [
+            "stdErr"
+        ]
+    },
     "d48 WG (Raw) SE",
-    "D48 WG (Raw)",
+    {
+        "from": "D48 WG (Raw)",
+        "summary": [
+            "stdErr"
+        ]
+    },
     "D48 WG (Raw) SE",
-    "d49 WG (Raw)",
+    {
+        "from": "d49 WG (Raw)",
+        "summary": [
+            "stdErr"
+        ]
+    },
     "d49 WG (Raw) SE",
-    "D49 WG (Raw)",
+    {
+        "from": "D49 WG (Raw)",
+        "summary": [
+            "stdErr"
+        ]
+    },
     "D49 WG (Raw) SE",
     "D47 Nonlinearity Slope",
     "D47 Nonlinearity Intercepts",
@@ -51,33 +96,45 @@
     },
     {
         "from": "d13C VPDB (Final)",
-        "to": "δ13C VPDB (Final)"
+        "to": "δ13C VPDB (Final)",
+        "summary": [
+            "average",
+            "stdDev"
+        ]
     },
-    "δ13C VPDB (Final) average",
-    "δ13C VPDB (Final) SD",
     {
         "from": "d18O VPDB (Final)",
-        "to": "δ18O VPDB (Final)"
+        "to": "δ18O VPDB (Final)",
+        "summary": [
+            "average",
+            "stdDev"
+        ]
     },
-    "δ18O VPDB (Final) average",
-    "δ18O VPDB (Final) SD",
     {
         "from": "d18O VSMOW (Final)",
-        "to": "δ18O VSMOW (Final)"
+        "to": "δ18O VSMOW (Final)",
+        "summary": [
+            "average",
+            "stdDev"
+        ]
     },
-    "δ18O VSMOW (Final) average",
-    "δ18O VSMOW (Final) SD",
     {
         "from": "D47 CDES (Final)",
-        "to": "Δ47 CDES (Final)"
+        "to": "Δ47 CDES (Final)",
+        "summary": [
+            "average",
+            "stdErr"
+        ]
     },
-    "Δ47 CDES (Final) average",
     "Δ47 CDES (Final) SE",
     {
         "from": "D48 CDES (Final)",
-        "to": "Δ48 CDES (Final)"
+        "to": "Δ48 CDES (Final)",
+        "summary": [
+            "average",
+            "stdErr"
+        ]
     },
-    "Δ48 CDES (Final) average",
     "Δ48 CDES (Final) SE",
     "Temperature Calibration slope (Anderson et al. 2021)",
     "Temperature Calibration intercept (Anderson et al. 2021)",
