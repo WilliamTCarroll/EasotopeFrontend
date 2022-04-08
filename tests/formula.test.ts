@@ -1,4 +1,3 @@
-/*eslint no-redeclare: "allow"*/
 import assert from "assert/strict";
 import { stdDev, stdErr, average, formula } from "../src/formula"
 import { parseOneSummary, parseSummary, SummaryType } from "../src/columnConfig";
@@ -8,7 +7,8 @@ describe("Formula Tests", () => {
 
     it("individual sanity checks", () => {
         // Basic test up front
-        let range = "A1:A5";
+        const range = { s: { c: 0, r: 0 }, e: { c: 0, r: 4 } };
+
         {
             let exp = "=AVERAGE(A1:A5)"
             let out = average(range);
@@ -51,7 +51,7 @@ describe("Formula Tests", () => {
 
     })
     it("Function Enum", () => {
-        let range = "B1:B5";
+        const range = { s: { c: 1, r: 0 }, e: { c: 1, r: 4 } };
         {
             let exp = "=AVERAGE(B1:B5)"
             let out = formula(Average, range);

@@ -1,10 +1,11 @@
+import { Range, utils } from "xlsx";
 import { SummaryType } from "./columnConfig";
 
 /**
  *  Attemt to generate the summary formula for the given range.\
  *  An error is returned if the `formulaName` is not recognized
  */
-export function formula(formula: SummaryType, range: string): string {
+export function formula(formula: SummaryType, range: Range | string): string {
 
     switch (formula) {
         case SummaryType.Average:
@@ -16,14 +17,17 @@ export function formula(formula: SummaryType, range: string): string {
     }
 }
 /** Average for the given range: `=AVERAGE` */
-export function average(range: string): string {
-    return `=AVERAGE(${range})`;
+export function average(range: Range | string): string {
+    const rangeStr = typeof range == "string" ? range : utils.encode_range(range);
+    return `=AVERAGE(${rangeStr})`;
 }
 /** Standard Deviation for the given range: `=STDEV` */
-export function stdDev(range: string): string {
-    return `=STDEV(${range})`;
+export function stdDev(range: Range | string): string {
+    const rangeStr = typeof range == "string" ? range : utils.encode_range(range);
+    return `=STDEV(${rangeStr})`;
 }
 /** Standard Error for the given range: `=STDEV/SQRT(COUNT)` */
-export function stdErr(range: string): string {
-    return `=STDEV(${range})/SQRT(COUNT(${range}))`;
+export function stdErr(range: Range | string): string {
+    const rangeStr = typeof range == "string" ? range : utils.encode_range(range);
+    return `=STDEV(${rangeStr})/SQRT(COUNT(${rangeStr}))`;
 }
