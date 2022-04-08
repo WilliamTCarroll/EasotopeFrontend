@@ -11,8 +11,7 @@ export class ColumnConfig {
      *  Construct ColumnConfig from the given json entries
      *  @throws If any of the ColumnConfig entries are invalid
      */
-    constructor(json: string) {
-        const entries = JSON.parse(json);
+    constructor(entries: any[]) {
         const errs = [];
         this.entries = [];
         for (const entry of entries) {
@@ -27,6 +26,10 @@ export class ColumnConfig {
         if (errs.length > 0) {
             throw errs;
         }
+    }
+    public static fromJson(json: string): ColumnConfig {
+        const entries = JSON.parse(json);
+        return new ColumnConfig(entries);
     }
     /** Parse the config entry and returns an error on invalid summary  */
     public static parseEntry(inp: any): Entry | Error {

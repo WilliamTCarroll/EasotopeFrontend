@@ -9,7 +9,7 @@ export const COLUMN_CONFIG = loadConfig();
 
 function loadConfig(): ColumnConfig {
     let cfg = readFileSync("./ColumnConfig.json", "utf-8");
-    return new ColumnConfig(cfg);
+    return ColumnConfig.fromJson(cfg);
 }
 
 export async function run(path: Path) {
