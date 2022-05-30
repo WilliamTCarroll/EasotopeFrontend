@@ -1,6 +1,6 @@
 # Typical for TS/JS project
-/lib/*
-/node_modules/*
+lib
+node_modules
 package-lock.json
 # For Testing output json and others
 *.out.*
