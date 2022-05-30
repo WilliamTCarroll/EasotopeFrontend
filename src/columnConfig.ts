@@ -45,7 +45,7 @@ export class ColumnConfig {
                 return { from, to, summary };
             }
         } else {
-            return inp as Entry
+            return { from: inp } as Entry;
         }
 
     }
@@ -84,8 +84,7 @@ export class ColumnConfig {
     }
 }
 /** An entry found in the `ColumnConfig` file */
-type Entry = string |
-{ from: string, to: string | undefined, summary: SummaryType[] | undefined };
+type Entry = { from: string, to: string | undefined, summary: SummaryType[] | undefined };
 /** The kinds of Summary that could possibly be done for this field */
 export enum SummaryType {
     Average,
