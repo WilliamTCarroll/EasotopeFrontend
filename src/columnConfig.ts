@@ -1,4 +1,6 @@
-import { CellObject } from "xlsx";
+import { CellAddress, CellObject, Range, WorkSheet, utils, } from "xlsx";
+import { formula } from "./formula";
+import { Replicate, Sample } from "./sample";
 
 /**
  * A file containing any number of Column Config entries.\
@@ -58,11 +60,11 @@ export class ColumnConfig {
         return typeof entry === "string" ? entry : entry.to || entry.from;
     }
     /**
-     * Attempt to find the column header in the stored entries.\
+     * Attempt to find the column header in the stored entries.
      * 
      * `column` can be a `string` or `CellObject`; the final column value is found.
      * 
-     * If found, the output value is returned.\
+     * If found, the output value is returned.
      * If not found, `null` is returned.
      */
     public columnOutput(column: string | CellObject | undefined): string | null {
@@ -82,14 +84,95 @@ export class ColumnConfig {
         // Nothing found, nothing returned
         return null;
     }
+    /** Write the Sample to the given sheet */
+    public fullSheetArray(samples: Sample[]): any[][] {
+        const header: string[] = [];
+        for (const entry of this.entries) {
+            header.push(ColumnConfig.entryOut(entry));
+        }
+        const out: any[][] = [header];
+        // Generate each sample
+        for (const sample of samples) {
+            // Place a blank line between each Sample
+            out.push([]);
+            const addr = { c: 0, r: out.length + 1 };
+            const lines = this.fullSampleArray(sample, addr);
+            out.push(...lines);
+        }
+        return out;
+    }
+    /**
+     *  Generate the array for the sample at the start address.\
+     *  All stored Replicates are written, as well.
+     */
+    public fullSampleArray(sample: Sample, start: CellAddress): any[][] {
+        const header: any[] = [];
+        this.entries.forEach((entry, c) => {
+            const val = sample[ColumnConfig.entryOut(entry)];
+            if (!!val) { header[c] = val; }
+        });
+        const enabled = [];
+        const disabled = [];
+        for (const rep of sample.replicates) {
+            const line = this.replicateArray(rep);
+            if (rep.Disabled) {
+                disabled.push(line);
+            } else {
+                enabled.push(line);
+            }
+        }
+        // Figure up the calculations
+        const lastRow = start.r + enabled.length - 1;
+        const calcs: { [key: string]: any[] } = {};
+        this.entries.forEach((entry, c) => {
+
+            if (entry.summary) {
+                for (const s of entry.summary) {
+                    // Ensure we have anything at all in the array
+                    // First entry is the title of this summary
+                    calcs[s] = calcs[s] || [s];
+                    const range: Range = {
+                        s: { c, r: start.r },
+                        e: { c, r: lastRow }
+                    };
+                    const val = formula(s, range)
+
+                    calcs[s][c] = { f: val, t: "n" };
+                }
+            }
+        })
+        // Add a note regarding the disabled replicates
+        if (disabled.length > 0) {
+            disabled.unshift(["Disabled Replicates Below"]);
+        }
+        for (const key in calcs) {
+            enabled.push(calcs[key]);
+        }
+
+        const out = [header, ...enabled, ...disabled]
+
+        return out
+    }
+    /** Generate the array of Excel values for this replicate */
+    public replicateArray(replicate: Replicate): any[] {
+
+        const out: any[] = [];
+        this.entries.forEach((entry, c) => {
+            const val = replicate[ColumnConfig.entryOut(entry)];
+            // TODO: ADD MANUAL CALCULATION
+            if (!!val) { out[c] = val; }
+        });
+
+        return out;
+    }
 }
 /** An entry found in the `ColumnConfig` file */
 type Entry = { from: string, to: string | undefined, summary: SummaryType[] | undefined };
 /** The kinds of Summary that could possibly be done for this field */
 export enum SummaryType {
-    Average,
-    StdDev,
-    StdErr
+    Average = "average",
+    StdDev = "stdDev",
+    StdErr = "stdErr"
 }
 /** 
  * Attempt to parse a list of summaries from the given array

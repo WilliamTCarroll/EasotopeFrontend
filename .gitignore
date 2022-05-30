@@ -2,7 +2,7 @@
 /lib/*
 /node_modules/*
 package-lock.json
-# For Testing output json
-*.out.json
+# For Testing output json and others
+*.out.*
 # For the locks placed by LibreOffice
 .*#
