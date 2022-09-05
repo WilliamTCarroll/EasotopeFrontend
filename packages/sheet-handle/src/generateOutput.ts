@@ -1,9 +1,11 @@
 import { Sample } from "./sample";
-import { utils, WorkBook, } from "xlsx";
+import { utils, WorkBook } from "xlsx";
 import { ColumnConfig } from "./columnConfig";
 
-export function generateOutput(samples: Sample[], colConfig: ColumnConfig): WorkBook {
-
+export function generateOutput(
+    samples: Sample[],
+    colConfig: ColumnConfig
+): WorkBook {
     const out = colConfig.fullSheetArray(samples);
 
     const book = utils.book_new();

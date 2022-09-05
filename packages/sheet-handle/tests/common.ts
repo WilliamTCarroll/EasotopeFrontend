@@ -42,6 +42,6 @@ function compare(inp: WorkBook, exp: WorkBook) {
 }
 
 export type SampleFile = {
-    base: string
-    samples: Sample[]
-}
+    base: string;
+    samples: Sample[];
+};

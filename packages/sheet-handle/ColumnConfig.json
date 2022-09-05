@@ -13,65 +13,47 @@
     "Acid Temp",
     {
         "from": "d13C VPDB (Raw)",
-        "summary": [
-            "stdErr"
-        ]
+        "summary": ["stdErr"]
     },
     "d13C VPDB (Raw) SE",
     {
         "from": "d18O VPDB (Raw)",
-        "summary": [
-            "stdErr"
-        ]
+        "summary": ["stdErr"]
     },
     "d18O VPDB (Raw) SE",
     {
         "from": "d18O VSMOW (Raw)",
-        "summary": [
-            "stdErr"
-        ]
+        "summary": ["stdErr"]
     },
     "d18O VSMOW (Raw) SE",
     {
         "from": "d47 WG (Raw)",
-        "summary": [
-            "stdErr"
-        ]
+        "summary": ["stdErr"]
     },
     "d47 WG (Raw) SE",
     {
         "from": "D47 WG (Raw)",
-        "summary": [
-            "stdErr"
-        ]
+        "summary": ["stdErr"]
     },
     "D47 WG (Raw) SE",
     {
         "from": "d48 WG (Raw)",
-        "summary": [
-            "stdErr"
-        ]
+        "summary": ["stdErr"]
     },
     "d48 WG (Raw) SE",
     {
         "from": "D48 WG (Raw)",
-        "summary": [
-            "stdErr"
-        ]
+        "summary": ["stdErr"]
     },
     "D48 WG (Raw) SE",
     {
         "from": "d49 WG (Raw)",
-        "summary": [
-            "stdErr"
-        ]
+        "summary": ["stdErr"]
     },
     "d49 WG (Raw) SE",
     {
         "from": "D49 WG (Raw)",
-        "summary": [
-            "stdErr"
-        ]
+        "summary": ["stdErr"]
     },
     "D49 WG (Raw) SE",
     "D47 Nonlinearity Slope",
@@ -97,43 +79,28 @@
     {
         "from": "d13C VPDB (Final)",
         "to": "δ13C VPDB (Final)",
-        "summary": [
-            "average",
-            "stdDev"
-        ]
+        "summary": ["average", "stdDev"]
     },
     {
         "from": "d18O VPDB (Final)",
         "to": "δ18O VPDB (Final)",
-        "summary": [
-            "average",
-            "stdDev"
-        ]
+        "summary": ["average", "stdDev"]
     },
     {
         "from": "d18O VSMOW (Final)",
         "to": "δ18O VSMOW (Final)",
-        "summary": [
-            "average",
-            "stdDev"
-        ]
+        "summary": ["average", "stdDev"]
     },
     {
         "from": "D47 CDES (Final)",
         "to": "Δ47 CDES (Final)",
-        "summary": [
-            "average",
-            "stdErr"
-        ]
+        "summary": ["average", "stdErr"]
     },
     "Δ47 CDES (Final) SE",
     {
         "from": "D48 CDES (Final)",
         "to": "Δ48 CDES (Final)",
-        "summary": [
-            "average",
-            "stdErr"
-        ]
+        "summary": ["average", "stdErr"]
     },
     "Δ48 CDES (Final) SE",
     "Temperature Calibration slope (Anderson et al. 2021)",

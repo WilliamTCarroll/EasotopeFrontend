@@ -6,7 +6,7 @@ import { ColumnConfig } from "./columnConfig";
  * @see {@link Replicate}
  */
 export class Sample {
-    [key: string]: any
+    [key: string]: any;
     replicates: Replicate[] = [];
 
     /**
@@ -55,7 +55,11 @@ export class Sample {
                                 sample.replicates.push(replicate);
                                 replicate = new Replicate();
                             } else {
-                                throw new Error(`Replicate appears before Sample at row: ${r + 1}`);
+                                throw new Error(
+                                    `Replicate appears before Sample at row: ${
+                                        r + 1
+                                    }`
+                                );
                             }
                         }
                     }
@@ -86,8 +90,6 @@ export class Sample {
         return out;
     }
 
-    // Non-Static methods
-
 }
 /**
  *  Attempt to grab the stored value in the CellObject
@@ -98,13 +100,13 @@ function getValue(inp: CellObject | any): any {
 }
 
 /**
- * A `Replicate` is an individual set of data, 
- * any number of which may be contained in a sample. 
+ * A `Replicate` is an individual set of data,
+ * any number of which may be contained in a sample.
  */
 export class Replicate {
-    [key: string]: any
+    [key: string]: any;
     /** Is this Replicate disabled? */
-    Disabled: boolean = false
+    Disabled: boolean = false;
     // TODO: More defined ones??
     /** Set whether or not this replicate is excluded */
     public setDisabled(disabled: boolean) {

@@ -1,4 +1,4 @@
-import { CellAddress, CellObject, Range, WorkSheet, utils, } from "xlsx";
+import { CellAddress, CellObject, Range, WorkSheet, utils } from "xlsx";
 import { formula } from "./formula";
 import { Replicate, Sample } from "./sample";
 
@@ -7,7 +7,7 @@ import { Replicate, Sample } from "./sample";
  * These denote the order, input, and optionally differing output name (if specified)
  */
 export class ColumnConfig {
-    entries: Entry[]
+    entries: Entry[];
 
     /**
      *  Construct ColumnConfig from the given json entries
@@ -42,14 +42,13 @@ export class ColumnConfig {
             const summary = parseSummary(sumBefore);
 
             if (summary instanceof Error) {
-                return summary
+                return summary;
             } else {
                 return { from, to, summary };
             }
         } else {
             return { from: inp } as Entry;
         }
-
     }
     /** Get the input column name for the given entry */
     static entryFrom(entry: Entry): string {
@@ -61,13 +60,15 @@ export class ColumnConfig {
     }
     /**
      * Attempt to find the column header in the stored entries.
-     * 
+     *
      * `column` can be a `string` or `CellObject`; the final column value is found.
-     * 
+     *
      * If found, the output value is returned.
      * If not found, `null` is returned.
      */
-    public columnOutput(column: string | CellObject | undefined): string | null {
+    public columnOutput(
+        column: string | CellObject | undefined
+    ): string | null {
         let col;
         if (!column) {
             return null;
@@ -109,7 +110,9 @@ export class ColumnConfig {
         const header: any[] = [];
         this.entries.forEach((entry, c) => {
             const val = sample[ColumnConfig.entryOut(entry)];
-            if (!!val) { header[c] = val; }
+            if (!!val) {
+                header[c] = val;
+            }
         });
         const enabled = [];
         const disabled = [];
@@ -125,7 +128,6 @@ export class ColumnConfig {
         const lastRow = start.r + enabled.length - 1;
         const calcs: { [key: string]: any[] } = {};
         this.entries.forEach((entry, c) => {
-
             if (entry.summary) {
                 for (const s of entry.summary) {
                     // Ensure we have anything at all in the array
@@ -133,14 +135,14 @@ export class ColumnConfig {
                     calcs[s] = calcs[s] || [s];
                     const range: Range = {
                         s: { c, r: start.r },
-                        e: { c, r: lastRow }
+                        e: { c, r: lastRow },
                     };
-                    const val = formula(s, range)
+                    const val = formula(s, range);
 
                     calcs[s][c] = { f: val, t: "n" };
                 }
             }
-        })
+        });
         // Add a note regarding the disabled replicates
         if (disabled.length > 0) {
             disabled.unshift(["Disabled Replicates Below"]);
@@ -149,38 +151,45 @@ export class ColumnConfig {
             enabled.push(calcs[key]);
         }
 
-        const out = [header, ...enabled, ...disabled]
+        const out = [header, ...enabled, ...disabled];
 
-        return out
+        return out;
     }
     /** Generate the array of Excel values for this replicate */
     public replicateArray(replicate: Replicate): any[] {
-
         const out: any[] = [];
         this.entries.forEach((entry, c) => {
             const val = replicate[ColumnConfig.entryOut(entry)];
             // TODO: ADD MANUAL CALCULATION
-            if (!!val) { out[c] = val; }
+            if (!!val) {
+                out[c] = val;
+            }
         });
 
         return out;
     }
 }
 /** An entry found in the `ColumnConfig` file */
-type Entry = { from: string, to: string | undefined, summary: SummaryType[] | undefined };
+type Entry = {
+    from: string;
+    to: string | undefined;
+    summary: SummaryType[] | undefined;
+};
 /** The kinds of Summary that could possibly be done for this field */
 export enum SummaryType {
     Average = "average",
     StdDev = "stdDev",
-    StdErr = "stdErr"
+    StdErr = "stdErr",
 }
-/** 
+/**
  * Attempt to parse a list of summaries from the given array
  * The first one to fail will return an error
  */
 export function parseSummary(inp: string[]): SummaryType[] | Error | undefined {
     // If this is blank, it's clearly NOT anything to worry about
-    if (!inp) { return undefined; }
+    if (!inp) {
+        return undefined;
+    }
     const out = [];
     for (const entry of inp) {
         const res = parseOneSummary(entry);
@@ -195,9 +204,12 @@ export function parseSummary(inp: string[]): SummaryType[] | Error | undefined {
 }
 /** Attempt to parse the given string as a summary */
 export function parseOneSummary(inp: string): SummaryType | Error | undefined {
-    if (!inp) { return undefined; }
+    if (!inp) {
+        return undefined;
+    }
     // Replace the various longer options with abbreviations (simpler switch)
-    const low = inp.toLowerCase()
+    const low = inp
+        .toLowerCase()
         .replace("standard", "std")
         .replace("error", "err")
         .replace("deviation", "dev");
