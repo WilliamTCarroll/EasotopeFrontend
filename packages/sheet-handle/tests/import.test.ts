@@ -19,7 +19,8 @@ describe("Basic Test", () => {
                 `${BASIC_PATH}inp.xls`,
             ].map(loadSampleFile)
         );
-        const exp = await expPromise;
+        // We trim, just in case the formatter wants extra whitespace
+        const exp = (await expPromise).trim();
 
         const errs = [];
         for (const sheet of sheets) {

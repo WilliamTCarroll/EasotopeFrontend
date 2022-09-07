@@ -89,7 +89,6 @@ export class Sample {
         }
         return out;
     }
-
 }
 /**
  *  Attempt to grab the stored value in the CellObject
@@ -107,6 +106,11 @@ export class Replicate {
     [key: string]: any;
     /** Is this Replicate disabled? */
     Disabled: boolean = false;
+    /**
+     *  What notes are upon this Replicate?
+     *  This is required if `Disabled`
+     */
+    Notes: string = "";
     // TODO: More defined ones??
     /** Set whether or not this replicate is excluded */
     public setDisabled(disabled: boolean) {
