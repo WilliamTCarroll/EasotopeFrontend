@@ -51,15 +51,9 @@ describe("Formula Tests", () => {
         // We must ensure we handle the most proper case:
         // SaRcAsMcAsE
         assert.strictEqual(parseOneSummary("StAnDaRdDeViAtIoN"), StdDev);
-
-        assert.strictEqual(
-            (parseOneSummary("RandoCardrissian") as any)["message"],
-            "Unknown formula: RandoCardrissian"
-        );
-        assert.deepEqual(
-            (parseSummary(["average", "RandoCardrissian"]) as any)["message"],
-            "Unknown formula: RandoCardrissian"
-        );
+        const err = new Error("Unknown formula: RandoCardrissian");
+        assert.deepEqual(parseOneSummary("RandoCardrissian"), err);
+        assert.deepEqual(parseSummary(["average", "RandoCardrissian"]), err);
     });
     it("Function Enum", () => {
         const range = { s: { c: 1, r: 0 }, e: { c: 1, r: 4 } };
