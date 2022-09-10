@@ -2,6 +2,7 @@
     "name": "root",
     "private": true,
     "scripts": {
+        "build": "lerna bootstrap",
         "test": "lerna run --stream test",
         "dev": "cd packages/gui && npm run dev"
     },
