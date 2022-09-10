@@ -1,5 +1,6 @@
 import { Sample } from "./sample";
-import { utils, WorkBook } from "xlsx";
+import { utils, WorkBook, write, writeFile } from "xlsx";
+import type { WritingOptions } from "xlsx";
 import { ColumnConfig } from "./columnConfig";
 
 export function generateOutput(
@@ -13,4 +14,14 @@ export function generateOutput(
 
     utils.book_append_sheet(book, sheet);
     return book;
+}
+
+export function writeToFile(
+    samples: Sample[],
+    colConfig: ColumnConfig,
+    options: WritingOptions,
+    filename: string
+) {
+    const wb = generateOutput(samples, colConfig);
+    writeFile(wb, filename, options);
 }
