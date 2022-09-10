@@ -150,20 +150,7 @@
                 "D48 CDES (ETF)": 0.184,
                 "D48 Acid Fractionation Factor": 0,
                 "Δ48 CDES (Final)": 0.184
-            }
-        ],
-        "Replicate": "S1",
-        "Run Date": "DH1A",
-        "Analysis": "CO2 clumped",
-        "Analysis Status": "OK",
-        "δ13C VPDB (Final)": -0.82,
-        "δ18O VPDB (Final)": 0.64,
-        "δ18O VSMOW (Final)": 31.57,
-        "Δ47 CDES (Final)": 0.634,
-        "Δ48 CDES (Final)": 0.26
-    },
-    {
-        "replicates": [
+            },
             {
                 "Disabled": false,
                 "Notes": "",
@@ -213,7 +200,20 @@
                 "D48 CDES (ETF)": 0.377,
                 "D48 Acid Fractionation Factor": 0,
                 "Δ48 CDES (Final)": 0.377
-            },
+            }
+        ],
+        "Replicate": "S1",
+        "Run Date": "DH1A",
+        "Analysis": "CO2 clumped",
+        "Analysis Status": "OK",
+        "δ13C VPDB (Final)": -0.82,
+        "δ18O VPDB (Final)": 0.64,
+        "δ18O VSMOW (Final)": 31.57,
+        "Δ47 CDES (Final)": 0.634,
+        "Δ48 CDES (Final)": 0.26
+    },
+    {
+        "replicates": [
             {
                 "Disabled": false,
                 "Notes": "",
@@ -363,20 +363,7 @@
                 "D48 CDES (ETF)": 0.22,
                 "D48 Acid Fractionation Factor": 0,
                 "Δ48 CDES (Final)": 0.22
-            }
-        ],
-        "Replicate": "S2",
-        "Run Date": "DH1B",
-        "Analysis": "CO2 clumped",
-        "Analysis Status": "OK",
-        "δ13C VPDB (Final)": -0.47,
-        "δ18O VPDB (Final)": 0.47,
-        "δ18O VSMOW (Final)": 31.41,
-        "Δ47 CDES (Final)": 0.61,
-        "Δ48 CDES (Final)": 0.214
-    },
-    {
-        "replicates": [
+            },
             {
                 "Disabled": false,
                 "Notes": "",
@@ -426,7 +413,20 @@
                 "D48 CDES (ETF)": 0.177,
                 "D48 Acid Fractionation Factor": 0,
                 "Δ48 CDES (Final)": 0.177
-            },
+            }
+        ],
+        "Replicate": "S2",
+        "Run Date": "DH1B",
+        "Analysis": "CO2 clumped",
+        "Analysis Status": "OK",
+        "δ13C VPDB (Final)": -0.47,
+        "δ18O VPDB (Final)": 0.47,
+        "δ18O VSMOW (Final)": 31.41,
+        "Δ47 CDES (Final)": 0.61,
+        "Δ48 CDES (Final)": 0.214
+    },
+    {
+        "replicates": [
             {
                 "Disabled": false,
                 "Notes": "",
@@ -626,20 +626,7 @@
                 "D48 CDES (ETF)": 0.247,
                 "D48 Acid Fractionation Factor": 0,
                 "Δ48 CDES (Final)": 0.247
-            }
-        ],
-        "Replicate": "S3",
-        "Run Date": "DH1C",
-        "Analysis": "CO2 clumped",
-        "Analysis Status": "OK",
-        "δ13C VPDB (Final)": -0.43,
-        "δ18O VPDB (Final)": 0.6,
-        "δ18O VSMOW (Final)": 31.54,
-        "Δ47 CDES (Final)": 0.618,
-        "Δ48 CDES (Final)": 0.297
-    },
-    {
-        "replicates": [
+            },
             {
                 "Disabled": false,
                 "Notes": "",
@@ -689,7 +676,20 @@
                 "D48 CDES (ETF)": 0.329,
                 "D48 Acid Fractionation Factor": 0,
                 "Δ48 CDES (Final)": 0.329
-            },
+            }
+        ],
+        "Replicate": "S3",
+        "Run Date": "DH1C",
+        "Analysis": "CO2 clumped",
+        "Analysis Status": "OK",
+        "δ13C VPDB (Final)": -0.43,
+        "δ18O VPDB (Final)": 0.6,
+        "δ18O VSMOW (Final)": 31.54,
+        "Δ47 CDES (Final)": 0.618,
+        "Δ48 CDES (Final)": 0.297
+    },
+    {
+        "replicates": [
             {
                 "Disabled": false,
                 "Notes": "",
@@ -839,20 +839,7 @@
                 "D48 CDES (ETF)": 0.256,
                 "D48 Acid Fractionation Factor": 0,
                 "Δ48 CDES (Final)": 0.256
-            }
-        ],
-        "Replicate": "S4",
-        "Run Date": "DH1D",
-        "Analysis": "CO2 clumped",
-        "Analysis Status": "OK",
-        "δ13C VPDB (Final)": -1.51,
-        "δ18O VPDB (Final)": -2,
-        "δ18O VSMOW (Final)": 28.85,
-        "Δ47 CDES (Final)": 0.594,
-        "Δ48 CDES (Final)": 0.261
-    },
-    {
-        "replicates": [
+            },
             {
                 "Disabled": false,
                 "Notes": "",
@@ -902,7 +889,20 @@
                 "D48 CDES (ETF)": 0.221,
                 "D48 Acid Fractionation Factor": 0,
                 "Δ48 CDES (Final)": 0.221
-            },
+            }
+        ],
+        "Replicate": "S4",
+        "Run Date": "DH1D",
+        "Analysis": "CO2 clumped",
+        "Analysis Status": "OK",
+        "δ13C VPDB (Final)": -1.51,
+        "δ18O VPDB (Final)": -2,
+        "δ18O VSMOW (Final)": 28.85,
+        "Δ47 CDES (Final)": 0.594,
+        "Δ48 CDES (Final)": 0.261
+    },
+    {
+        "replicates": [
             {
                 "Disabled": false,
                 "Notes": "",
@@ -1052,20 +1052,7 @@
                 "D48 CDES (ETF)": 0.124,
                 "D48 Acid Fractionation Factor": 0,
                 "Δ48 CDES (Final)": 0.124
-            }
-        ],
-        "Replicate": "S5",
-        "Run Date": "DH3A",
-        "Analysis": "CO2 clumped",
-        "Analysis Status": "OK",
-        "δ13C VPDB (Final)": -0.43,
-        "δ18O VPDB (Final)": 0.44,
-        "δ18O VSMOW (Final)": 31.37,
-        "Δ47 CDES (Final)": 0.641,
-        "Δ48 CDES (Final)": 0.24
-    },
-    {
-        "replicates": [
+            },
             {
                 "Disabled": false,
                 "Notes": "",
@@ -1115,7 +1102,20 @@
                 "D48 CDES (ETF)": 0.413,
                 "D48 Acid Fractionation Factor": 0,
                 "Δ48 CDES (Final)": 0.413
-            },
+            }
+        ],
+        "Replicate": "S5",
+        "Run Date": "DH3A",
+        "Analysis": "CO2 clumped",
+        "Analysis Status": "OK",
+        "δ13C VPDB (Final)": -0.43,
+        "δ18O VPDB (Final)": 0.44,
+        "δ18O VSMOW (Final)": 31.37,
+        "Δ47 CDES (Final)": 0.641,
+        "Δ48 CDES (Final)": 0.24
+    },
+    {
+        "replicates": [
             {
                 "Disabled": false,
                 "Notes": "",
@@ -1265,20 +1265,7 @@
                 "D48 CDES (ETF)": 0.264,
                 "D48 Acid Fractionation Factor": 0,
                 "Δ48 CDES (Final)": 0.264
-            }
-        ],
-        "Replicate": "S6",
-        "Run Date": "DH3B",
-        "Analysis": "CO2 clumped",
-        "Analysis Status": "OK",
-        "δ13C VPDB (Final)": -1.37,
-        "δ18O VPDB (Final)": -0.21,
-        "δ18O VSMOW (Final)": 30.7,
-        "Δ47 CDES (Final)": 0.595,
-        "Δ48 CDES (Final)": 0.226
-    },
-    {
-        "replicates": [
+            },
             {
                 "Disabled": false,
                 "Notes": "",
@@ -1328,7 +1315,20 @@
                 "D48 CDES (ETF)": 0.145,
                 "D48 Acid Fractionation Factor": 0,
                 "Δ48 CDES (Final)": 0.145
-            },
+            }
+        ],
+        "Replicate": "S6",
+        "Run Date": "DH3B",
+        "Analysis": "CO2 clumped",
+        "Analysis Status": "OK",
+        "δ13C VPDB (Final)": -1.37,
+        "δ18O VPDB (Final)": -0.21,
+        "δ18O VSMOW (Final)": 30.7,
+        "Δ47 CDES (Final)": 0.595,
+        "Δ48 CDES (Final)": 0.226
+    },
+    {
+        "replicates": [
             {
                 "Disabled": false,
                 "Notes": "",
@@ -1478,20 +1478,7 @@
                 "D48 CDES (ETF)": 0.23,
                 "D48 Acid Fractionation Factor": 0,
                 "Δ48 CDES (Final)": 0.23
-            }
-        ],
-        "Replicate": "S7",
-        "Run Date": "DH91A",
-        "Analysis": "CO2 clumped",
-        "Analysis Status": "OK",
-        "δ13C VPDB (Final)": -1.97,
-        "δ18O VPDB (Final)": -1.47,
-        "δ18O VSMOW (Final)": 29.4,
-        "Δ47 CDES (Final)": 0.588,
-        "Δ48 CDES (Final)": 0.197
-    },
-    {
-        "replicates": [
+            },
             {
                 "Disabled": false,
                 "Notes": "",
@@ -1541,7 +1528,20 @@
                 "D48 CDES (ETF)": 0.254,
                 "D48 Acid Fractionation Factor": 0,
                 "Δ48 CDES (Final)": 0.254
-            },
+            }
+        ],
+        "Replicate": "S7",
+        "Run Date": "DH91A",
+        "Analysis": "CO2 clumped",
+        "Analysis Status": "OK",
+        "δ13C VPDB (Final)": -1.97,
+        "δ18O VPDB (Final)": -1.47,
+        "δ18O VSMOW (Final)": 29.4,
+        "Δ47 CDES (Final)": 0.588,
+        "Δ48 CDES (Final)": 0.197
+    },
+    {
+        "replicates": [
             {
                 "Disabled": false,
                 "Notes": "",
@@ -1691,20 +1691,7 @@
                 "D48 CDES (ETF)": 0.26,
                 "D48 Acid Fractionation Factor": 0,
                 "Δ48 CDES (Final)": 0.26
-            }
-        ],
-        "Replicate": "S8",
-        "Run Date": "DH92A",
-        "Analysis": "CO2 clumped",
-        "Analysis Status": "OK",
-        "δ13C VPDB (Final)": -0.62,
-        "δ18O VPDB (Final)": 0.65,
-        "δ18O VSMOW (Final)": 31.59,
-        "Δ47 CDES (Final)": 0.603,
-        "Δ48 CDES (Final)": 0.23
-    },
-    {
-        "replicates": [
+            },
             {
                 "Disabled": false,
                 "Notes": "",
@@ -1754,7 +1741,20 @@
                 "D48 CDES (ETF)": 0.204,
                 "D48 Acid Fractionation Factor": 0,
                 "Δ48 CDES (Final)": 0.204
-            },
+            }
+        ],
+        "Replicate": "S8",
+        "Run Date": "DH92A",
+        "Analysis": "CO2 clumped",
+        "Analysis Status": "OK",
+        "δ13C VPDB (Final)": -0.62,
+        "δ18O VPDB (Final)": 0.65,
+        "δ18O VSMOW (Final)": 31.59,
+        "Δ47 CDES (Final)": 0.603,
+        "Δ48 CDES (Final)": 0.23
+    },
+    {
+        "replicates": [
             {
                 "Disabled": false,
                 "Notes": "",
@@ -1904,20 +1904,7 @@
                 "D48 CDES (ETF)": 0.2,
                 "D48 Acid Fractionation Factor": 0,
                 "Δ48 CDES (Final)": 0.2
-            }
-        ],
-        "Replicate": "S9",
-        "Run Date": "RDH92B",
-        "Analysis": "CO2 clumped",
-        "Analysis Status": "OK",
-        "δ13C VPDB (Final)": -2.03,
-        "δ18O VPDB (Final)": -1.5,
-        "δ18O VSMOW (Final)": 29.38,
-        "Δ47 CDES (Final)": 0.571,
-        "Δ48 CDES (Final)": 0.208
-    },
-    {
-        "replicates": [
+            },
             {
                 "Disabled": false,
                 "Notes": "",
@@ -1967,7 +1954,20 @@
                 "D48 CDES (ETF)": 0.1,
                 "D48 Acid Fractionation Factor": 0,
                 "Δ48 CDES (Final)": 0.1
-            },
+            }
+        ],
+        "Replicate": "S9",
+        "Run Date": "RDH92B",
+        "Analysis": "CO2 clumped",
+        "Analysis Status": "OK",
+        "δ13C VPDB (Final)": -2.03,
+        "δ18O VPDB (Final)": -1.5,
+        "δ18O VSMOW (Final)": 29.38,
+        "Δ47 CDES (Final)": 0.571,
+        "Δ48 CDES (Final)": 0.208
+    },
+    {
+        "replicates": [
             {
                 "Disabled": false,
                 "Notes": "",
@@ -2117,20 +2117,7 @@
                 "D48 CDES (ETF)": 0.388,
                 "D48 Acid Fractionation Factor": 0,
                 "Δ48 CDES (Final)": 0.388
-            }
-        ],
-        "Replicate": "S10",
-        "Run Date": "GR3A",
-        "Analysis": "CO2 clumped",
-        "Analysis Status": "OK",
-        "δ13C VPDB (Final)": -3.9,
-        "δ18O VPDB (Final)": -1.46,
-        "δ18O VSMOW (Final)": 29.42,
-        "Δ47 CDES (Final)": 0.627,
-        "Δ48 CDES (Final)": 0.282
-    },
-    {
-        "replicates": [
+            },
             {
                 "Disabled": false,
                 "Notes": "",
@@ -2180,7 +2167,20 @@
                 "D48 CDES (ETF)": 0.23,
                 "D48 Acid Fractionation Factor": 0,
                 "Δ48 CDES (Final)": 0.23
-            },
+            }
+        ],
+        "Replicate": "S10",
+        "Run Date": "GR3A",
+        "Analysis": "CO2 clumped",
+        "Analysis Status": "OK",
+        "δ13C VPDB (Final)": -3.9,
+        "δ18O VPDB (Final)": -1.46,
+        "δ18O VSMOW (Final)": 29.42,
+        "Δ47 CDES (Final)": 0.627,
+        "Δ48 CDES (Final)": 0.282
+    },
+    {
+        "replicates": [
             {
                 "Disabled": false,
                 "Notes": "",
@@ -2330,20 +2330,7 @@
                 "D48 CDES (ETF)": 0.292,
                 "D48 Acid Fractionation Factor": 0,
                 "Δ48 CDES (Final)": 0.292
-            }
-        ],
-        "Replicate": "S11",
-        "Run Date": "GR3B",
-        "Analysis": "CO2 clumped",
-        "Analysis Status": "OK",
-        "δ13C VPDB (Final)": -4.15,
-        "δ18O VPDB (Final)": -1.55,
-        "δ18O VSMOW (Final)": 29.33,
-        "Δ47 CDES (Final)": 0.607,
-        "Δ48 CDES (Final)": 0.247
-    },
-    {
-        "replicates": [
+            },
             {
                 "Disabled": false,
                 "Notes": "",
@@ -2393,7 +2380,20 @@
                 "D48 CDES (ETF)": 0.225,
                 "D48 Acid Fractionation Factor": 0,
                 "Δ48 CDES (Final)": 0.225
-            },
+            }
+        ],
+        "Replicate": "S11",
+        "Run Date": "GR3B",
+        "Analysis": "CO2 clumped",
+        "Analysis Status": "OK",
+        "δ13C VPDB (Final)": -4.15,
+        "δ18O VPDB (Final)": -1.55,
+        "δ18O VSMOW (Final)": 29.33,
+        "Δ47 CDES (Final)": 0.607,
+        "Δ48 CDES (Final)": 0.247
+    },
+    {
+        "replicates": [
             {
                 "Disabled": false,
                 "Notes": "",
@@ -2593,20 +2593,7 @@
                 "D48 CDES (ETF)": 0.168,
                 "D48 Acid Fractionation Factor": 0,
                 "Δ48 CDES (Final)": 0.168
-            }
-        ],
-        "Replicate": "S12",
-        "Run Date": "GR3C",
-        "Analysis": "CO2 clumped",
-        "Analysis Status": "OK",
-        "δ13C VPDB (Final)": -3.68,
-        "δ18O VPDB (Final)": -1.44,
-        "δ18O VSMOW (Final)": 29.43,
-        "Δ47 CDES (Final)": 0.601,
-        "Δ48 CDES (Final)": 0.228
-    },
-    {
-        "replicates": [
+            },
             {
                 "Disabled": false,
                 "Notes": "",
@@ -2656,7 +2643,20 @@
                 "D48 CDES (ETF)": 0.274,
                 "D48 Acid Fractionation Factor": 0,
                 "Δ48 CDES (Final)": 0.274
-            },
+            }
+        ],
+        "Replicate": "S12",
+        "Run Date": "GR3C",
+        "Analysis": "CO2 clumped",
+        "Analysis Status": "OK",
+        "δ13C VPDB (Final)": -3.68,
+        "δ18O VPDB (Final)": -1.44,
+        "δ18O VSMOW (Final)": 29.43,
+        "Δ47 CDES (Final)": 0.601,
+        "Δ48 CDES (Final)": 0.228
+    },
+    {
+        "replicates": [
             {
                 "Disabled": false,
                 "Notes": "",
@@ -2856,20 +2856,7 @@
                 "D48 CDES (ETF)": 3.87,
                 "D48 Acid Fractionation Factor": 0,
                 "Δ48 CDES (Final)": 3.87
-            }
-        ],
-        "Replicate": "S13",
-        "Run Date": "GR5A",
-        "Analysis": "CO2 clumped",
-        "Analysis Status": "OK",
-        "δ13C VPDB (Final)": -3.71,
-        "δ18O VPDB (Final)": -2.13,
-        "δ18O VSMOW (Final)": 28.72,
-        "Δ47 CDES (Final)": 0.88,
-        "Δ48 CDES (Final)": 0.955
-    },
-    {
-        "replicates": [
+            },
             {
                 "Disabled": false,
                 "Notes": "",
@@ -2919,7 +2906,20 @@
                 "D48 CDES (ETF)": 0.276,
                 "D48 Acid Fractionation Factor": 0,
                 "Δ48 CDES (Final)": 0.276
-            },
+            }
+        ],
+        "Replicate": "S13",
+        "Run Date": "GR5A",
+        "Analysis": "CO2 clumped",
+        "Analysis Status": "OK",
+        "δ13C VPDB (Final)": -3.71,
+        "δ18O VPDB (Final)": -2.13,
+        "δ18O VSMOW (Final)": 28.72,
+        "Δ47 CDES (Final)": 0.88,
+        "Δ48 CDES (Final)": 0.955
+    },
+    {
+        "replicates": [
             {
                 "Disabled": false,
                 "Notes": "",
@@ -3069,20 +3069,7 @@
                 "D48 CDES (ETF)": 0.382,
                 "D48 Acid Fractionation Factor": 0,
                 "Δ48 CDES (Final)": 0.382
-            }
-        ],
-        "Replicate": "S14",
-        "Run Date": "GR5B",
-        "Analysis": "CO2 clumped",
-        "Analysis Status": "OK",
-        "δ13C VPDB (Final)": -4.93,
-        "δ18O VPDB (Final)": -2.63,
-        "δ18O VSMOW (Final)": 28.21,
-        "Δ47 CDES (Final)": 0.639,
-        "Δ48 CDES (Final)": 0.278
-    },
-    {
-        "replicates": [
+            },
             {
                 "Disabled": false,
                 "Notes": "",
@@ -3132,7 +3119,20 @@
                 "D48 CDES (ETF)": 0.285,
                 "D48 Acid Fractionation Factor": 0,
                 "Δ48 CDES (Final)": 0.285
-            },
+            }
+        ],
+        "Replicate": "S14",
+        "Run Date": "GR5B",
+        "Analysis": "CO2 clumped",
+        "Analysis Status": "OK",
+        "δ13C VPDB (Final)": -4.93,
+        "δ18O VPDB (Final)": -2.63,
+        "δ18O VSMOW (Final)": 28.21,
+        "Δ47 CDES (Final)": 0.639,
+        "Δ48 CDES (Final)": 0.278
+    },
+    {
+        "replicates": [
             {
                 "Disabled": false,
                 "Notes": "",
@@ -3282,20 +3282,7 @@
                 "D48 CDES (ETF)": 0.316,
                 "D48 Acid Fractionation Factor": 0,
                 "Δ48 CDES (Final)": 0.316
-            }
-        ],
-        "Replicate": "S15",
-        "Run Date": "GR5C",
-        "Analysis": "CO2 clumped",
-        "Analysis Status": "OK",
-        "δ13C VPDB (Final)": -4.41,
-        "δ18O VPDB (Final)": -1.81,
-        "δ18O VSMOW (Final)": 29.05,
-        "Δ47 CDES (Final)": 0.589,
-        "Δ48 CDES (Final)": 0.226
-    },
-    {
-        "replicates": [
+            },
             {
                 "Disabled": false,
                 "Notes": "",
@@ -3345,7 +3332,20 @@
                 "D48 CDES (ETF)": 0.136,
                 "D48 Acid Fractionation Factor": 0,
                 "Δ48 CDES (Final)": 0.136
-            },
+            }
+        ],
+        "Replicate": "S15",
+        "Run Date": "GR5C",
+        "Analysis": "CO2 clumped",
+        "Analysis Status": "OK",
+        "δ13C VPDB (Final)": -4.41,
+        "δ18O VPDB (Final)": -1.81,
+        "δ18O VSMOW (Final)": 29.05,
+        "Δ47 CDES (Final)": 0.589,
+        "Δ48 CDES (Final)": 0.226
+    },
+    {
+        "replicates": [
             {
                 "Disabled": false,
                 "Notes": "",
@@ -3495,20 +3495,7 @@
                 "D48 CDES (ETF)": 0.275,
                 "D48 Acid Fractionation Factor": 0,
                 "Δ48 CDES (Final)": 0.275
-            }
-        ],
-        "Replicate": "S16",
-        "Run Date": "GR6A",
-        "Analysis": "CO2 clumped",
-        "Analysis Status": "OK",
-        "δ13C VPDB (Final)": -4.36,
-        "δ18O VPDB (Final)": -1.77,
-        "δ18O VSMOW (Final)": 29.1,
-        "Δ47 CDES (Final)": 0.577,
-        "Δ48 CDES (Final)": 0.196
-    },
-    {
-        "replicates": [
+            },
             {
                 "Disabled": false,
                 "Notes": "",
@@ -3558,7 +3545,20 @@
                 "D48 CDES (ETF)": 0.037,
                 "D48 Acid Fractionation Factor": 0,
                 "Δ48 CDES (Final)": 0.037
-            },
+            }
+        ],
+        "Replicate": "S16",
+        "Run Date": "GR6A",
+        "Analysis": "CO2 clumped",
+        "Analysis Status": "OK",
+        "δ13C VPDB (Final)": -4.36,
+        "δ18O VPDB (Final)": -1.77,
+        "δ18O VSMOW (Final)": 29.1,
+        "Δ47 CDES (Final)": 0.577,
+        "Δ48 CDES (Final)": 0.196
+    },
+    {
+        "replicates": [
             {
                 "Disabled": false,
                 "Notes": "",
@@ -3708,20 +3708,7 @@
                 "D48 CDES (ETF)": 0.206,
                 "D48 Acid Fractionation Factor": 0,
                 "Δ48 CDES (Final)": 0.206
-            }
-        ],
-        "Replicate": "S17",
-        "Run Date": "GR7A",
-        "Analysis": "CO2 clumped",
-        "Analysis Status": "OK",
-        "δ13C VPDB (Final)": -4.17,
-        "δ18O VPDB (Final)": -1.43,
-        "δ18O VSMOW (Final)": 29.45,
-        "Δ47 CDES (Final)": 0.599,
-        "Δ48 CDES (Final)": 0.264
-    },
-    {
-        "replicates": [
+            },
             {
                 "Disabled": false,
                 "Notes": "",
@@ -3771,7 +3758,20 @@
                 "D48 CDES (ETF)": 0.313,
                 "D48 Acid Fractionation Factor": 0,
                 "Δ48 CDES (Final)": 0.313
-            },
+            }
+        ],
+        "Replicate": "S17",
+        "Run Date": "GR7A",
+        "Analysis": "CO2 clumped",
+        "Analysis Status": "OK",
+        "δ13C VPDB (Final)": -4.17,
+        "δ18O VPDB (Final)": -1.43,
+        "δ18O VSMOW (Final)": 29.45,
+        "Δ47 CDES (Final)": 0.599,
+        "Δ48 CDES (Final)": 0.264
+    },
+    {
+        "replicates": [
             {
                 "Disabled": false,
                 "Notes": "",
@@ -3921,6 +3921,56 @@
                 "D48 CDES (ETF)": 0.232,
                 "D48 Acid Fractionation Factor": 0,
                 "Δ48 CDES (Final)": 0.232
+            },
+            {
+                "Disabled": false,
+                "Notes": "",
+                "Replicate": "R4",
+                "Run Date": "2019-10-25 20:21 PDT",
+                "Analysis": "CO2 clumpD48",
+                "Analysis Status": "OK",
+                "Mass Spec": "BB8-NuCarb",
+                "Easotope Name": "GR7B",
+                "Sample Type": "Calcite",
+                "Corr Interval": "2019-10-20 12:53:00 PDT",
+                "Acid Temp": 70,
+                "d13C VPDB (Raw)": -2.94,
+                "d13C VPDB (Raw) SE": 0.03,
+                "d18O VPDB (Raw)": 6.76,
+                "d18O VPDB (Raw) SE": 0.04,
+                "d18O VSMOW (Raw)": 37.88,
+                "d18O VSMOW (Raw) SE": 0.04,
+                "d47 WG (Raw)": 13.179,
+                "d47 WG (Raw) SE": 0.086,
+                "D47 WG (Raw)": -0.336,
+                "D47 WG (Raw) SE": 0.023,
+                "d48 WG (Raw)": 25.213,
+                "d48 WG (Raw) SE": 0.135,
+                "D48 WG (Raw)": -0.295,
+                "D48 WG (Raw) SE": 0.119,
+                "d49 WG (Raw)": -21.543,
+                "d49 WG (Raw) SE": 3.669,
+                "D49 WG (Raw)": -46.494,
+                "D49 WG (Raw) SE": 3.545,
+                "δ13C VPDB (Final)": -3.08,
+                "δ18O VPDB (Final)": -1.28,
+                "δ18O VSMOW (Final)": 29.6,
+                "D47 Nonlinearity Slope": -0.00107001870289063,
+                "D47 Nonlinearity Intercepts": "1=-0.6481129146024582",
+                "D47 WG (HG)": -0.322,
+                "D47 ETF Slope": 1.27511882136624,
+                "D47 ETF Intercept": 1.03088671147171,
+                "D47 CDES (ETF)": 0.62,
+                "D47 Acid Fractionation Factor": 0,
+                "Δ47 CDES (Final)": 0.62,
+                "D48 Nonlinearity Slope": -0.00472224414498709,
+                "D48 Nonlinearity Intercepts": "1=-0.14510316139811652",
+                "D48 WG (HG)": -0.175,
+                "D48 ETF Slope": 1.05794315104717,
+                "D48 ETF Intercept": 0.288362391064545,
+                "D48 CDES (ETF)": 0.103,
+                "D48 Acid Fractionation Factor": 0,
+                "Δ48 CDES (Final)": 0.103
             }
         ],
         "Replicate": "S18",
@@ -3932,5 +3982,218 @@
         "δ18O VSMOW (Final)": 29.75,
         "Δ47 CDES (Final)": 0.603,
         "Δ48 CDES (Final)": 0.204
+    },
+    {
+        "replicates": [
+            {
+                "Disabled": false,
+                "Notes": "",
+                "Replicate": "R1",
+                "Run Date": "2018-03-05 17:16 PST",
+                "Analysis": "CO2 clumpD48",
+                "Analysis Status": "OK",
+                "Mass Spec": "R2D2 - NuCarb",
+                "Easotope Name": "GR91A",
+                "Sample Type": "Calcite",
+                "Corr Interval": "2018-02-17 00:00:00 PST",
+                "Acid Temp": 70,
+                "d13C VPDB (Raw)": -3.19,
+                "d13C VPDB (Raw) SE": 0,
+                "d18O VPDB (Raw)": 7.24,
+                "d18O VPDB (Raw) SE": 0,
+                "d18O VSMOW (Raw)": 38.38,
+                "d18O VSMOW (Raw) SE": 0,
+                "d47 WG (Raw)": 13.86,
+                "d47 WG (Raw) SE": 0.022,
+                "D47 WG (Raw)": -0.27,
+                "D47 WG (Raw) SE": 0.025,
+                "d48 WG (Raw)": 13.869,
+                "d48 WG (Raw) SE": 0.054,
+                "D48 WG (Raw)": -0.027,
+                "D48 WG (Raw) SE": 0.051,
+                "d49 WG (Raw)": 18.307,
+                "d49 WG (Raw) SE": 3.614,
+                "D49 WG (Raw)": -2.905,
+                "D49 WG (Raw) SE": 3.545,
+                "δ13C VPDB (Final)": -3.21,
+                "δ18O VPDB (Final)": -0.97,
+                "δ18O VSMOW (Final)": 29.92,
+                "D47 Nonlinearity Slope": -0.000559476511386708,
+                "D47 Nonlinearity Intercepts": "1=-0.6485780008848876",
+                "D47 WG (HG)": -0.262,
+                "D47 ETF Slope": 0.95365405276413,
+                "D47 ETF Intercept": 0.828436591504917,
+                "D47 CDES (ETF)": 0.578,
+                "D47 Acid Fractionation Factor": 0,
+                "Δ47 CDES (Final)": 0.578,
+                "D48 Nonlinearity Slope": -0.00744953947101022,
+                "D48 Nonlinearity Intercepts": "1=-0.15001480345484808",
+                "D48 WG (HG)": 0.076,
+                "D48 ETF Slope": 0.737959146656566,
+                "D48 ETF Intercept": 0.240518583287869,
+                "D48 CDES (ETF)": 0.297,
+                "D48 Acid Fractionation Factor": 0,
+                "Δ48 CDES (Final)": 0.297
+            },
+            {
+                "Disabled": false,
+                "Notes": "",
+                "Replicate": "R2",
+                "Run Date": "2018-03-06 17:30 PST",
+                "Analysis": "CO2 clumpD48",
+                "Analysis Status": "OK",
+                "Mass Spec": "R2D2 - NuCarb",
+                "Easotope Name": "GR91A",
+                "Sample Type": "Calcite",
+                "Corr Interval": "2018-02-17 00:00:00 PST",
+                "Acid Temp": 70,
+                "d13C VPDB (Raw)": -3.22,
+                "d13C VPDB (Raw) SE": 0,
+                "d18O VPDB (Raw)": 7.2,
+                "d18O VPDB (Raw) SE": 0,
+                "d18O VSMOW (Raw)": 38.35,
+                "d18O VSMOW (Raw) SE": 0,
+                "d47 WG (Raw)": 13.812,
+                "d47 WG (Raw) SE": 0.005,
+                "D47 WG (Raw)": -0.255,
+                "D47 WG (Raw) SE": 0.007,
+                "d48 WG (Raw)": 13.582,
+                "d48 WG (Raw) SE": 0.062,
+                "D48 WG (Raw)": -0.239,
+                "D48 WG (Raw) SE": 0.056,
+                "d49 WG (Raw)": 13.974,
+                "d49 WG (Raw) SE": 2.545,
+                "D49 WG (Raw)": -7.051,
+                "D49 WG (Raw) SE": 2.498,
+                "δ13C VPDB (Final)": -3.25,
+                "δ18O VPDB (Final)": -1.01,
+                "δ18O VSMOW (Final)": 29.87,
+                "D47 Nonlinearity Slope": -0.000478648977620403,
+                "D47 Nonlinearity Intercepts": "1=-0.6528295510831601",
+                "D47 WG (HG)": -0.248,
+                "D47 ETF Slope": 0.971886678290045,
+                "D47 ETF Intercept": 0.842540807807503,
+                "D47 CDES (ETF)": 0.601,
+                "D47 Acid Fractionation Factor": 0,
+                "Δ47 CDES (Final)": 0.601,
+                "D48 Nonlinearity Slope": -0.00752449865524221,
+                "D48 Nonlinearity Intercepts": "1=-0.14325504788708457",
+                "D48 WG (HG)": -0.137,
+                "D48 ETF Slope": 0.802144554778815,
+                "D48 ETF Intercept": 0.255176191919452,
+                "D48 CDES (ETF)": 0.145,
+                "D48 Acid Fractionation Factor": 0,
+                "Δ48 CDES (Final)": 0.145
+            },
+            {
+                "Disabled": false,
+                "Notes": "",
+                "Replicate": "R3",
+                "Run Date": "2018-03-10 07:02 PST",
+                "Analysis": "CO2 clumpD48",
+                "Analysis Status": "OK",
+                "Mass Spec": "R2D2 - NuCarb",
+                "Easotope Name": "GR91A",
+                "Sample Type": "Calcite",
+                "Corr Interval": "2018-02-17 00:00:00 PST",
+                "Acid Temp": 70,
+                "d13C VPDB (Raw)": -3.21,
+                "d13C VPDB (Raw) SE": 0,
+                "d18O VPDB (Raw)": 7.17,
+                "d18O VPDB (Raw) SE": 0,
+                "d18O VSMOW (Raw)": 38.32,
+                "d18O VSMOW (Raw) SE": 0,
+                "d47 WG (Raw)": 13.79,
+                "d47 WG (Raw) SE": 0.018,
+                "D47 WG (Raw)": -0.258,
+                "D47 WG (Raw) SE": 0.015,
+                "d48 WG (Raw)": 13.657,
+                "d48 WG (Raw) SE": 0.05,
+                "D48 WG (Raw)": -0.109,
+                "D48 WG (Raw) SE": 0.048,
+                "d49 WG (Raw)": 14.786,
+                "d49 WG (Raw) SE": 2.856,
+                "D49 WG (Raw)": -6.209,
+                "D49 WG (Raw) SE": 2.793,
+                "δ13C VPDB (Final)": -3.24,
+                "δ18O VPDB (Final)": -1.05,
+                "δ18O VSMOW (Final)": 29.83,
+                "D47 Nonlinearity Slope": -0.00011684279334069,
+                "D47 Nonlinearity Intercepts": "1=-0.658646429038648",
+                "D47 WG (HG)": -0.257,
+                "D47 ETF Slope": 0.988973948349859,
+                "D47 ETF Intercept": 0.861835282822223,
+                "D47 CDES (ETF)": 0.608,
+                "D47 Acid Fractionation Factor": 0,
+                "Δ47 CDES (Final)": 0.608,
+                "D48 Nonlinearity Slope": -0.00663203357386042,
+                "D48 Nonlinearity Intercepts": "1=-0.14384668944265594",
+                "D48 WG (HG)": -0.018,
+                "D48 ETF Slope": 0.866007649214565,
+                "D48 ETF Intercept": 0.265224452854679,
+                "D48 CDES (ETF)": 0.25,
+                "D48 Acid Fractionation Factor": 0,
+                "Δ48 CDES (Final)": 0.25
+            },
+            {
+                "Disabled": false,
+                "Notes": "",
+                "Replicate": "R4",
+                "Run Date": "2019-10-25 21:45 PDT",
+                "Analysis": "CO2 clumpD48",
+                "Analysis Status": "OK",
+                "Mass Spec": "BB8-NuCarb",
+                "Easotope Name": "GR91A",
+                "Sample Type": "Calcite",
+                "Corr Interval": "2019-10-20 12:53:00 PDT",
+                "Acid Temp": 70,
+                "d13C VPDB (Raw)": -3.09,
+                "d13C VPDB (Raw) SE": 0.01,
+                "d18O VPDB (Raw)": 6.64,
+                "d18O VPDB (Raw) SE": 0.04,
+                "d18O VSMOW (Raw)": 37.76,
+                "d18O VSMOW (Raw) SE": 0.04,
+                "d47 WG (Raw)": 12.896,
+                "d47 WG (Raw) SE": 0.032,
+                "D47 WG (Raw)": -0.345,
+                "D47 WG (Raw) SE": 0.033,
+                "d48 WG (Raw)": 25.031,
+                "d48 WG (Raw) SE": 0.063,
+                "D48 WG (Raw)": -0.235,
+                "D48 WG (Raw) SE": 0.015,
+                "d49 WG (Raw)": -16.748,
+                "d49 WG (Raw) SE": 1.186,
+                "D49 WG (Raw)": -41.448,
+                "D49 WG (Raw) SE": 1.097,
+                "δ13C VPDB (Final)": -3.23,
+                "δ18O VPDB (Final)": -1.4,
+                "δ18O VSMOW (Final)": 29.48,
+                "D47 Nonlinearity Slope": -0.00107001870289063,
+                "D47 Nonlinearity Intercepts": "1=-0.6481129146024583",
+                "D47 WG (HG)": -0.331,
+                "D47 ETF Slope": 1.27511882136624,
+                "D47 ETF Intercept": 1.03088671147171,
+                "D47 CDES (ETF)": 0.609,
+                "D47 Acid Fractionation Factor": 0,
+                "Δ47 CDES (Final)": 0.609,
+                "D48 Nonlinearity Slope": -0.00472224414498709,
+                "D48 Nonlinearity Intercepts": "1=-0.14510316139811658",
+                "D48 WG (HG)": -0.116,
+                "D48 ETF Slope": 1.05794315104717,
+                "D48 ETF Intercept": 0.288362391064545,
+                "D48 CDES (ETF)": 0.165,
+                "D48 Acid Fractionation Factor": 0,
+                "Δ48 CDES (Final)": 0.165
+            }
+        ],
+        "Replicate": "S19",
+        "Run Date": "GR91A",
+        "Analysis": "CO2 clumped",
+        "Analysis Status": "OK",
+        "δ13C VPDB (Final)": -3.23,
+        "δ18O VPDB (Final)": -1.11,
+        "δ18O VSMOW (Final)": 29.78,
+        "Δ47 CDES (Final)": 0.599,
+        "Δ48 CDES (Final)": 0.214
     }
 ]

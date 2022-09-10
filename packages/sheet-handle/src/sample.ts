@@ -1,4 +1,4 @@
-import { CellObject, Range, utils, WorkSheet } from "xlsx";
+import { CellObject, Range, utils, WorkSheet, read } from "xlsx";
 import { ColumnConfig } from "./columnConfig";
 
 /**
@@ -8,7 +8,13 @@ import { ColumnConfig } from "./columnConfig";
 export class Sample {
     [key: string]: any;
     replicates: Replicate[] = [];
-
+    /** Attempt to parse the given blob as a WorkBook and grab the first sheet */
+    public static fromBlob(blob: Blob, config: ColumnConfig): Sample[] {
+        const book = read(blob);
+        // Grab only the first sheet
+        const sheet = book.Sheets[book.SheetNames[0]];
+        return Sample.fromSheet(sheet, config);
+    }
     /**
      * Attempts to load the given sheet as a list of samples
      * @param sheet Sheet to load
@@ -32,6 +38,11 @@ export class Sample {
 
         for (let r = range.s.r + 1; r <= range.e.r; r++) {
             const isSample = new String(sheet[`A${r + 1}`].v).startsWith("S");
+            // If there is already a sample, push it to the output and reset
+            if (isSample && sample) {
+                out.push(sample);
+                sample = new Sample();
+            }
             for (let c = range.s.c; c <= range.e.c; c++) {
                 const headIndex = `${utils.encode_col(c)}1`;
                 const head = config.columnOutput(sheet[headIndex]);
@@ -40,30 +51,6 @@ export class Sample {
                 }
                 const cell = utils.encode_cell({ c, r });
                 const val = sheet[cell];
-                // If we are at a first column, create one item or the other
-                if (c === 0) {
-                    if (isSample) {
-                        // If there is already a sample, push it to the output and reset
-                        if (sample) {
-                            out.push(sample);
-                            sample = new Sample();
-                        }
-                    } else {
-                        // If the replicate is set, push it
-                        if (replicate) {
-                            if (sample) {
-                                sample.replicates.push(replicate);
-                                replicate = new Replicate();
-                            } else {
-                                throw new Error(
-                                    `Replicate appears before Sample at row: ${
-                                        r + 1
-                                    }`
-                                );
-                            }
-                        }
-                    }
-                }
                 if (isSample) {
                     // Ensure the sample is set
                     sample = sample || new Sample();
@@ -86,6 +73,22 @@ export class Sample {
                     }
                 }
             }
+
+            // If the replicate is set, push it
+            if (replicate) {
+                if (sample) {
+                    sample.replicates.push(replicate);
+                    replicate = null;
+                } else {
+                    throw new Error(
+                        `Replicate appears before Sample at row: ${r + 1}`
+                    );
+                }
+            }
+        }
+        // Push the final sample
+        if (sample) {
+            out.push(sample);
         }
         return out;
     }
