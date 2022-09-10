@@ -6,13 +6,13 @@
         "dev": "cd packages/gui && npm run dev"
     },
     "devDependencies": {
-        "lerna": "^5.0",
         "@types/mocha": "^9.1",
         "@types/node": "^16",
+        "lerna": "^5.0",
         "mocha": "^9.1",
         "node": "16",
+        "sheet-handle": "file:packages/sheet-handle",
         "ts-node": "^10.5",
-        "tsc": "^2.0",
-        "sheet-handle": "file:packages/sheet-handle"
+        "tsc": "^2.0"
     }
 }
