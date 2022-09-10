@@ -3,14 +3,9 @@ import { join, basename } from "path";
 import { readFile, readFileSync } from "fs-extra";
 import { Sample } from "../src/sample";
 import { read, WorkBook } from "xlsx";
-import { ColumnConfig } from "../src/columnConfig";
+import { ColumnConfig, defaultConfig } from "../src/columnConfig";
 
-export const COLUMN_CONFIG = loadConfig();
-
-function loadConfig(): ColumnConfig {
-    let cfg = readFileSync("./ColumnConfig.json", "utf-8");
-    return ColumnConfig.fromJson(cfg);
-}
+export const COLUMN_CONFIG = defaultConfig;
 
 export async function run(path: Path) {
     // Begin loading the files

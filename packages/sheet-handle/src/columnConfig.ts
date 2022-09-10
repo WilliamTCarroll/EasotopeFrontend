@@ -1,6 +1,8 @@
 import { CellAddress, CellObject, Range, WorkSheet, utils } from "xlsx";
 import { formula } from "./formula";
 import { Replicate, Sample } from "./sample";
+// Loadin Defaults
+import { config } from "./defaultColumnConfig";
 
 /**
  * A file containing any number of Column Config entries.\
@@ -226,3 +228,4 @@ export function parseOneSummary(inp: string): SummaryType | Error | undefined {
             return Error(`Unknown formula: ${inp}`);
     }
 }
+export const defaultConfig = new ColumnConfig(config);
