@@ -145,9 +145,10 @@ export class ColumnConfig {
                 }
             }
         });
-        // Add a note regarding the disabled replicates
+        // Add a blank row and note regarding the disabled replicates
         if (disabled.length > 0) {
             disabled.unshift(["Disabled Replicates Below"]);
+            disabled.unshift([]);
         }
         for (const key in calcs) {
             enabled.push(calcs[key]);

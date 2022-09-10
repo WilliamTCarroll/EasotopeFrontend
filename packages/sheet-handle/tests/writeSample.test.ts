@@ -128,6 +128,7 @@ describe("Writing Sample and Replicate to Xlsx", () => {
             ],
             ["average", , , , , , , , , , , , { t: "n", f: "AVERAGE(M1:M3)" }],
             ["stdDev", , , , , , , , , , , , { t: "n", f: "STDEV(M1:M3)" }],
+            [],
             ["Disabled Replicates Below"],
             [
                 ,
@@ -249,6 +250,7 @@ describe("Writing Sample and Replicate to Xlsx", () => {
             ],
             ["average", , , , , , , , , , , , { t: "n", f: "AVERAGE(M4:M6)" }],
             ["stdDev", , , , , , , , , , , , { t: "n", f: "STDEV(M4:M6)" }],
+            [],
             ["Disabled Replicates Below"],
             [
                 ,
@@ -314,11 +316,11 @@ describe("Writing Sample and Replicate to Xlsx", () => {
                 ,
                 ,
                 ,
-                { t: "n", f: "STDEV(K14:K15)/SQRT(COUNT(K14:K15))" },
+                { t: "n", f: "STDEV(K15:K16)/SQRT(COUNT(K15:K16))" },
                 ,
                 ,
                 ,
-                { t: "n", f: "STDEV(O14:O15)/SQRT(COUNT(O14:O15))" },
+                { t: "n", f: "STDEV(O15:O16)/SQRT(COUNT(O15:O16))" },
             ],
             [
                 "average",
@@ -333,9 +335,10 @@ describe("Writing Sample and Replicate to Xlsx", () => {
                 ,
                 ,
                 ,
-                { t: "n", f: "AVERAGE(M14:M15)" },
+                { t: "n", f: "AVERAGE(M15:M16)" },
             ],
-            ["stdDev", , , , , , , , , , , , { t: "n", f: "STDEV(M14:M15)" }],
+            ["stdDev", , , , , , , , , , , , { t: "n", f: "STDEV(M15:M16)" }],
+            [],
             ["Disabled Replicates Below"],
             [
                 ,
@@ -401,11 +404,11 @@ describe("Writing Sample and Replicate to Xlsx", () => {
                 ,
                 ,
                 ,
-                { t: "n", f: "STDEV(K23:K24)/SQRT(COUNT(K23:K24))" },
+                { t: "n", f: "STDEV(K25:K26)/SQRT(COUNT(K25:K26))" },
                 ,
                 ,
                 ,
-                { t: "n", f: "STDEV(O23:O24)/SQRT(COUNT(O23:O24))" },
+                { t: "n", f: "STDEV(O25:O26)/SQRT(COUNT(O25:O26))" },
             ],
             [
                 "average",
@@ -420,9 +423,9 @@ describe("Writing Sample and Replicate to Xlsx", () => {
                 ,
                 ,
                 ,
-                { t: "n", f: "AVERAGE(M23:M24)" },
+                { t: "n", f: "AVERAGE(M25:M26)" },
             ],
-            ["stdDev", , , , , , , , , , , , { t: "n", f: "STDEV(M23:M24)" }],
+            ["stdDev", , , , , , , , , , , , { t: "n", f: "STDEV(M25:M26)" }],
         ];
         const samples = [s1, s2, s3];
         const out = colConfig.fullSheetArray(samples);
