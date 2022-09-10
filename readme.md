@@ -3,21 +3,33 @@
 NOTE: Many of the sections below are general notes, and will be modified/cleaned up later
 
 ## General Info on Current Software
-- Easotope.org
-- Produces Various Spreadsheet (xls)
-- Partially collect columns
-- Rows are sorted by test
-- "S" defines new sample (Each S is unique)
-- Dates within an S may or may not be unique
-- Two blank Rows between samples
 
-- Import XLSX, export XLSX (likely with "live" formulas)
-- All (or most) Calculations to be done on the spreadsheet
+-   Easotope.org
+-   Produces Various Spreadsheet (xls)
+-   Partially collect columns
+-   Rows are sorted by test
+-   "S" defines new sample (Each S is unique)
+-   Dates within an S may or may not be unique
+-   Two blank Rows between samples
 
-## GUI 
-- Ability to remove specific replicates from a sample, *required* reason
+-   Import XLSX, export XLSX (likely with "live" formulas)
+-   All (or most) Calculations to be done on the spreadsheet
+
+# Getting Started
+
+This uses `lerna` for workspace handling. Tests and dev scripts can be ran with it, and
+
+1. Clone the repo
+2. Open a terminal in the project directory.
+3. `sh npx lerna bootstrap` (This runs `npm i` in all directories, and links the local dependencies)
+4. `sh npm run dev` (loads up a dev instance of the server)
+
+## GUI
+
+-   Ability to remove specific replicates from a sample, _required_ reason
 
 ## Process
+
 1. ~Import spreadsheet from Easotope~
 2. ~Split into samples with list of replicates on each~
 3. Calculations
@@ -26,8 +38,8 @@ NOTE: Many of the sections below are general notes, and will be modified/cleaned
 4. Optional removal with notes of replicants
 5. Write calculations back onto template spreadsheet
 
-
 ## Column Config File
+
 ```js
 [
     // The order here determines the output order
@@ -36,23 +48,20 @@ NOTE: Many of the sections below are general notes, and will be modified/cleaned
     "D49 WG (Raw)",
     {
         // "from" will grab the name on the input excel file
-        "from": "d13C VPDB (Final)",
+        from: "d13C VPDB (Final)",
         // And change it to "to" on the output (and display as this, too)
-        "to": "δ13C VPDB (Final)"
+        to: "δ13C VPDB (Final)",
     },
     {
-        "from": "d18O VPDB (Final)",
-        "to": "δ18O VPDB (Final)",
+        from: "d18O VPDB (Final)",
+        to: "δ18O VPDB (Final)",
         // Some fields may have an array of summary types
-        "summary": [
-            "average",
-            "stdDev"
-        ]
+        summary: ["average", "stdDev"],
     },
     // If not found on the input, these are still added to the output columns.
     // They may be used for calculations, or placeholders.
     "δ13C VPDB (Final) SD",
     "Temp [°C]",
     // etc
-]
+];
 ```
