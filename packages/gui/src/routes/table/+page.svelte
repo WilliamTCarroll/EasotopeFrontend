@@ -36,7 +36,7 @@
                 let style: string = item
                     ? typeof item
                     : first.replicates[0]
-                    ? typeof first.replicates[0]
+                    ? typeof first.replicates[0][val]
                     : "undefined";
                 if (i === 0) {
                     style = style + " sticky";
@@ -60,7 +60,13 @@
 </script>
 
 <button on:click={saveFile} disabled={anyErrors}>Save File</button>
-<p hidden={!anyErrors}>Please Add Notes As Required Before Save</p>
+<p>
+    {#if anyErrors}
+        Status: Please Add Notes As Required Before Save
+    {:else}
+        Status: OK
+    {/if}
+</p>
 
 <table id="table">
     <tr>
@@ -81,9 +87,3 @@
         {/each}
     {/each}
 </table>
-
-<style>
-    .numeric {
-        width: 70px;
-    }
-</style>

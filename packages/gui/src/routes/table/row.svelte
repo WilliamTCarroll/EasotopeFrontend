@@ -8,7 +8,7 @@
 
     let isError = false;
     let noteClass = "";
-    // Update the
+    // Update the stored values reactively
     $: {
         isError = data.Disabled && data.Notes.trim().length === 0;
         noteClass = isError ? ERR_CLASS : "";
@@ -26,7 +26,7 @@
                 />
             {:else if col.val === "Notes"}
                 <div class={noteClass}>
-                    {#if isError} **REQUIRED** {/if}
+                    {#if isError} **REQUIRED** <br /> {/if}
                     <input
                         type="text"
                         required={data.Disabled}
