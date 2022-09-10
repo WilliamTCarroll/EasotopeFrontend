@@ -21,8 +21,8 @@ This uses `lerna` for workspace handling. Tests and dev scripts can be ran with 
 
 1. Clone the repo
 2. Open a terminal in the project directory.
-3. `sh npx lerna bootstrap` (This runs `npm i` in all directories, and links the local dependencies)
-4. `sh npm run dev` (loads up a dev instance of the server)
+3. `npx lerna bootstrap` (This runs `npm i` in all directories, and links the local dependencies)
+4. `npm run dev` (loads up a dev instance of the server)
 
 ## GUI
 
