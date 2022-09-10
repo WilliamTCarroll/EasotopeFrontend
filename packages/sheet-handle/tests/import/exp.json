@@ -203,7 +203,8 @@
             }
         ],
         "Replicate": "S1",
-        "Run Date": "DH1A",
+        "Sample": "DH1A",
+        "Run Date": "",
         "Analysis": "CO2 clumped",
         "Analysis Status": "OK",
         "δ13C VPDB (Final)": -0.82,
@@ -416,7 +417,8 @@
             }
         ],
         "Replicate": "S2",
-        "Run Date": "DH1B",
+        "Sample": "DH1B",
+        "Run Date": "",
         "Analysis": "CO2 clumped",
         "Analysis Status": "OK",
         "δ13C VPDB (Final)": -0.47,
@@ -679,7 +681,8 @@
             }
         ],
         "Replicate": "S3",
-        "Run Date": "DH1C",
+        "Sample": "DH1C",
+        "Run Date": "",
         "Analysis": "CO2 clumped",
         "Analysis Status": "OK",
         "δ13C VPDB (Final)": -0.43,
@@ -892,7 +895,8 @@
             }
         ],
         "Replicate": "S4",
-        "Run Date": "DH1D",
+        "Sample": "DH1D",
+        "Run Date": "",
         "Analysis": "CO2 clumped",
         "Analysis Status": "OK",
         "δ13C VPDB (Final)": -1.51,
@@ -1105,7 +1109,8 @@
             }
         ],
         "Replicate": "S5",
-        "Run Date": "DH3A",
+        "Sample": "DH3A",
+        "Run Date": "",
         "Analysis": "CO2 clumped",
         "Analysis Status": "OK",
         "δ13C VPDB (Final)": -0.43,
@@ -1318,7 +1323,8 @@
             }
         ],
         "Replicate": "S6",
-        "Run Date": "DH3B",
+        "Sample": "DH3B",
+        "Run Date": "",
         "Analysis": "CO2 clumped",
         "Analysis Status": "OK",
         "δ13C VPDB (Final)": -1.37,
@@ -1531,7 +1537,8 @@
             }
         ],
         "Replicate": "S7",
-        "Run Date": "DH91A",
+        "Sample": "DH91A",
+        "Run Date": "",
         "Analysis": "CO2 clumped",
         "Analysis Status": "OK",
         "δ13C VPDB (Final)": -1.97,
@@ -1744,7 +1751,8 @@
             }
         ],
         "Replicate": "S8",
-        "Run Date": "DH92A",
+        "Sample": "DH92A",
+        "Run Date": "",
         "Analysis": "CO2 clumped",
         "Analysis Status": "OK",
         "δ13C VPDB (Final)": -0.62,
@@ -1957,7 +1965,8 @@
             }
         ],
         "Replicate": "S9",
-        "Run Date": "RDH92B",
+        "Sample": "RDH92B",
+        "Run Date": "",
         "Analysis": "CO2 clumped",
         "Analysis Status": "OK",
         "δ13C VPDB (Final)": -2.03,
@@ -2170,7 +2179,8 @@
             }
         ],
         "Replicate": "S10",
-        "Run Date": "GR3A",
+        "Sample": "GR3A",
+        "Run Date": "",
         "Analysis": "CO2 clumped",
         "Analysis Status": "OK",
         "δ13C VPDB (Final)": -3.9,
@@ -2383,7 +2393,8 @@
             }
         ],
         "Replicate": "S11",
-        "Run Date": "GR3B",
+        "Sample": "GR3B",
+        "Run Date": "",
         "Analysis": "CO2 clumped",
         "Analysis Status": "OK",
         "δ13C VPDB (Final)": -4.15,
@@ -2646,7 +2657,8 @@
             }
         ],
         "Replicate": "S12",
-        "Run Date": "GR3C",
+        "Sample": "GR3C",
+        "Run Date": "",
         "Analysis": "CO2 clumped",
         "Analysis Status": "OK",
         "δ13C VPDB (Final)": -3.68,
@@ -2909,7 +2921,8 @@
             }
         ],
         "Replicate": "S13",
-        "Run Date": "GR5A",
+        "Sample": "GR5A",
+        "Run Date": "",
         "Analysis": "CO2 clumped",
         "Analysis Status": "OK",
         "δ13C VPDB (Final)": -3.71,
@@ -3122,7 +3135,8 @@
             }
         ],
         "Replicate": "S14",
-        "Run Date": "GR5B",
+        "Sample": "GR5B",
+        "Run Date": "",
         "Analysis": "CO2 clumped",
         "Analysis Status": "OK",
         "δ13C VPDB (Final)": -4.93,
@@ -3335,7 +3349,8 @@
             }
         ],
         "Replicate": "S15",
-        "Run Date": "GR5C",
+        "Sample": "GR5C",
+        "Run Date": "",
         "Analysis": "CO2 clumped",
         "Analysis Status": "OK",
         "δ13C VPDB (Final)": -4.41,
@@ -3548,7 +3563,8 @@
             }
         ],
         "Replicate": "S16",
-        "Run Date": "GR6A",
+        "Sample": "GR6A",
+        "Run Date": "",
         "Analysis": "CO2 clumped",
         "Analysis Status": "OK",
         "δ13C VPDB (Final)": -4.36,
@@ -3761,7 +3777,8 @@
             }
         ],
         "Replicate": "S17",
-        "Run Date": "GR7A",
+        "Sample": "GR7A",
+        "Run Date": "",
         "Analysis": "CO2 clumped",
         "Analysis Status": "OK",
         "δ13C VPDB (Final)": -4.17,
@@ -3974,7 +3991,8 @@
             }
         ],
         "Replicate": "S18",
-        "Run Date": "GR7B",
+        "Sample": "GR7B",
+        "Run Date": "",
         "Analysis": "CO2 clumped",
         "Analysis Status": "OK",
         "δ13C VPDB (Final)": -3.15,
@@ -4187,7 +4205,8 @@
             }
         ],
         "Replicate": "S19",
-        "Run Date": "GR91A",
+        "Sample": "GR91A",
+        "Run Date": "",
         "Analysis": "CO2 clumped",
         "Analysis Status": "OK",
         "δ13C VPDB (Final)": -3.23,

@@ -1,5 +1,6 @@
 export const config = [
     "Replicate",
+    "Sample",
     "Disabled",
     "Notes",
     {

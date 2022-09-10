@@ -55,7 +55,17 @@ export class Sample {
                     // Ensure the sample is set
                     sample = sample || new Sample();
                     if (val && head) {
-                        sample[head] = getValue(val);
+                        const outVal = getValue(val);
+                        // Left as a switch, assuming that other cases are required
+                        switch (head) {
+                            // For Sample, the Run Date is actually the ID of said Sample (stored in "Replicate")
+                            case "Run Date":
+                                sample.Sample = outVal;
+                                sample[head] = "";
+                                break;
+                            default:
+                                sample[head] = outVal;
+                        }
                     }
                 } else {
                     // Ensure the replicate is set
