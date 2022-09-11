@@ -2,7 +2,7 @@
     "name": "root",
     "private": true,
     "scripts": {
-        "build": "lerna bootstrap",
+        "build": "npx lerna bootstrap --force-local && npx lerna run build",
         "test": "lerna run --stream test",
         "dev": "cd packages/gui && npm run dev"
     },
