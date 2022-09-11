@@ -1,6 +1,6 @@
 <script lang="ts">
     import { ColumnConfig, type Sample, writeToFile } from "sheet-handle";
-    import { rows, getColumnConfig, checkRowsOk } from "../../stores";
+    import { rows, getColumnConfig, checkRowsForErr } from "../../stores";
     import TableRow from "./row.svelte";
 
     let data: Sample[] = [];
@@ -8,20 +8,21 @@
     let anyErrors = false;
 
     $: {
-        anyErrors = checkRowsOk(data);
-        console.log("CHECK ROWS FN");
+        // Do we have any errors to notify the user with?
+        anyErrors = checkRowsForErr(data);
+        // Push the data back into the rows
         rows.set(data);
     }
-
+    // Ensure we update if a new dataset arrives
     rows.subscribe((rows) => {
+        // If they match perfectly, this could have been triggered via child component updates
         if (data === rows) {
             return;
         }
         data = rows;
         const first = rows[0];
-        console.log("UPDATE DATA");
         if (!first) {
-            // Set our error
+            // Set our error, so something will appear at all
             cols = [{ val: "NO DATA FOUND", style: "string" }];
         } else {
             // Clear out, just in case
@@ -33,6 +34,7 @@
                 const head = config.entries[i];
                 const val = ColumnConfig.entryOut(head);
                 const item = first[val];
+                // Attempt to grab what kind of value is stored
                 let style: string = item
                     ? typeof item
                     : first.replicates[0]
