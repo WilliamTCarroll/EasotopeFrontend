@@ -1,5 +1,5 @@
 import { Sample } from "./sample";
-import { utils, WorkBook, write, writeFile } from "xlsx";
+import { utils, WorkBook, writeFile } from "xlsx";
 import type { WritingOptions } from "xlsx";
 import { ColumnConfig } from "./columnConfig";
 
@@ -15,7 +15,7 @@ export function generateOutput(
     utils.book_append_sheet(book, sheet);
     return book;
 }
-
+/** Save the given set of Samples as the given FileName */
 export function writeToFile(
     samples: Sample[],
     colConfig: ColumnConfig,
