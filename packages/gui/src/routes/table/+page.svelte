@@ -53,7 +53,9 @@
             type: "buffer",
             bookType,
         };
-        writeToFile(data, getColumnConfig(), options, `out.${bookType}`);
+        const date = new Date();
+        const name = date.toISOString().replaceAll(":", ".");
+        writeToFile(data, getColumnConfig(), options, `${name}.${bookType}`);
     }
 </script>
 
