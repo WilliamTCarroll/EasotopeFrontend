@@ -45,21 +45,22 @@
             }
         }
     });
-    function print() {
-        console.log(data);
-        console.log(rows);
-    }
-    function saveFile() {
-        // TODO: SELECT FORMAT
+    /** Save the stored Samples as the given kind of Workboox */
+    function saveFile(bookType: string) {
         const options: any = {
             type: "buffer",
-            bookType: "xlsx",
+            bookType,
         };
-        writeToFile(data, getColumnConfig(), options, "out.xlsx");
+        writeToFile(data, getColumnConfig(), options, `out.${bookType}`);
     }
 </script>
 
-<button on:click={saveFile} disabled={anyErrors}>Save File</button>
+<button on:click={() => saveFile("xlsx")} disabled={anyErrors}>
+    Save File as Excel
+</button>
+<button on:click={() => saveFile("ods")} disabled={anyErrors}>
+    Save File as OpenOffice
+</button>
 <p>
     {#if anyErrors}
         Status: Please Add Notes As Required Before Save
