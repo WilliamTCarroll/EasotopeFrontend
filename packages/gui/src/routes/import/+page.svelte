@@ -12,7 +12,7 @@
         Loaded = <any>"File loaded and ready for scrutiny",
         Error = <any>"ERROR",
     }
-    type StatusStr = keyof typeof Status;
+
     let options: FileDropOptions = {
         multiple: false,
         accept: [".xlsx", ".xls", ".xlsb", ".ods"],

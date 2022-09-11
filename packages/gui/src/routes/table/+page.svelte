@@ -2,14 +2,25 @@
     import { ColumnConfig, type Sample, writeToFile } from "sheet-handle";
     import { rows, getColumnConfig, checkRowsForErr } from "../../stores";
     import TableRow from "./row.svelte";
+    enum Status {
+        NoteRequired = <any>"Please Add Notes As Required Before Save",
+        Ok = <any>"OK",
+        NoData = <any>"No Data.  Please go to `Import`",
+    }
 
     let data: Sample[] = [];
     let cols: { val: string; style: string }[] = [];
-    let anyErrors = false;
+    let status: Status = Status.NoData;
 
     $: {
-        // Do we have any errors to notify the user with?
-        anyErrors = checkRowsForErr(data);
+        // Set our status based off our dataset
+        if (data.length === 0) {
+            status = Status.NoData;
+        } else if (checkRowsForErr(data)) {
+            status = Status.NoteRequired;
+        } else {
+            status = Status.Ok;
+        }
         // Push the data back into the rows
         rows.set(data);
     }
@@ -59,19 +70,14 @@
     }
 </script>
 
-<button on:click={() => saveFile("xlsx")} disabled={anyErrors}>
+<button on:click={() => saveFile("xlsx")} disabled={status !== Status.Ok}>
     Save File as Excel
 </button>
-<button on:click={() => saveFile("ods")} disabled={anyErrors}>
+<button on:click={() => saveFile("ods")} disabled={status !== Status.Ok}>
     Save File as OpenOffice
 </button>
-<p>
-    {#if anyErrors}
-        Status: Please Add Notes As Required Before Save
-    {:else}
-        Status: OK
-    {/if}
-</p>
+
+<p class={Status[status]}>Status: {status.valueOf()}</p>
 
 <table id="table">
     <tr>
@@ -92,3 +98,14 @@
         {/each}
     {/each}
 </table>
+
+<style>
+    p.NoteRequired {
+        background-color: red;
+        font-weight: bold;
+    }
+    p.NoData {
+        background-color: yellow;
+        font-weight: bold;
+    }
+</style>
