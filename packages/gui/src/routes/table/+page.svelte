@@ -1,5 +1,10 @@
 <script lang="ts">
-    import { ColumnConfig, type Sample, writeToFile } from "sheet-handle";
+    import {
+        ColumnConfig,
+        type Sample,
+        writeToFile,
+        SummaryType,
+    } from "sheet-handle";
     import { rows, getColumnConfig, checkRowsForErr } from "../../stores";
     import TableRow from "./row.svelte";
     enum Status {
@@ -91,11 +96,32 @@
             >
         {/each}
     </tr>
-    {#each data as item}
-        <TableRow bind:data={item} {cols} showDisabled={false} />
-        {#each item.replicates as rep}
+    {#each data as sample}
+        <TableRow bind:data={sample} {cols} showDisabled={false} />
+        {#each sample.replicates as rep}
             <TableRow bind:data={rep} {cols} />
         {/each}
+        <!-- Now, summary rows -->
+        <TableRow
+            bind:data={sample}
+            {cols}
+            showDisabled={false}
+            summary={SummaryType.Average}
+        />
+        <TableRow
+            bind:data={sample}
+            {cols}
+            showDisabled={false}
+            summary={SummaryType.StdDev}
+        />
+        <TableRow
+            bind:data={sample}
+            {cols}
+            showDisabled={false}
+            summary={SummaryType.StdErr}
+        />
+
+        <tr><p /> </tr>
     {/each}
 </table>
 
