@@ -8,14 +8,16 @@
 
     let isError = false;
     let noteClass = "";
+    let rowClass = "";
     // Update the stored values reactively
     $: {
         isError = data.Disabled && data.Notes.trim().length === 0;
         noteClass = isError ? ERR_CLASS : "";
+        rowClass = data.Disabled ? "disabled-row" : "";
     }
 </script>
 
-<tr>
+<tr class={rowClass}>
     {#each cols as col}
         <td class={col.style}>
             {#if col.val === "Disabled" && showDisabled}

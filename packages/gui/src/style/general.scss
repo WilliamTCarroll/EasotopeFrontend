@@ -1,3 +1,7 @@
+$back-color: white;
+$back-err: red;
+$back-hover: slateblue;
+
 .slot-parent {
     top: 20px;
 }
@@ -10,11 +14,11 @@ nav {
 }
 
 .error {
+    color: black;
     text-align: center;
-    background-color: red;
-}
-.error * {
-    background-color: red;
+    * {
+        background-color: $back-err;
+    }
 }
 
 #table {
@@ -23,20 +27,26 @@ nav {
     display: contents;
 
     top: 10px;
-}
-
-#table tr:nth-child(even) {
-    background-color: lightgray;
-}
-#table tr {
-    background-color: white;
+    & tr {
+        background-color: $back-color;
+        &:nth-child(even) {
+            background-color: darken($color: $back-color, $amount: 30);
+        }
+        &.disabled-row {
+            color: darkslategray;
+            background-color: darken($color: $back-color, $amount: 50);
+        }
+        &:hover {
+            background-color: $back-hover;
+        }
+    }
 }
 
 #table td,
 #table th {
     border: 1px solid black;
     padding: 8px;
-    white-space: nowrap;
+    $back-color-space: nowrap;
 }
 // TODO: Issues between this
 #table .sticky {
@@ -46,10 +56,6 @@ nav {
     z-index: 2;
     background-color: #04aa6d;
     border: 1px solid black;
-}
-
-#table tr:hover {
-    background-color: darkgray;
 }
 
 #table th.sticky {
