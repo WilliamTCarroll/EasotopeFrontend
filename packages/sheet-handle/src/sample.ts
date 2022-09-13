@@ -1,5 +1,6 @@
 import { CellObject, Range, utils, WorkSheet, read } from "xlsx";
-import { ColumnConfig } from "./columnConfig";
+import { ColumnConfig, SummaryType } from "./columnConfig";
+import { formulaLive } from "./formula";
 
 /**
  * A `Sample` contains any number of `Replicate`.\
@@ -101,6 +102,18 @@ export class Sample {
             out.push(sample);
         }
         return out;
+    }
+    /** Return the specified summary of stored values at the given key that are not disabled */
+    public summary(summary: SummaryType, key: string): number | Error {
+        const data = this.replicates
+            .filter((val) => !val.Disabled) // Ignore Disabled Vals
+            .map((rep) => rep[key]); // Only grab specified key
+        const anyNotNumber = data.find((val) => typeof val !== "number");
+        if (anyNotNumber) {
+            return Error(`Not Number: ${anyNotNumber}`);
+        } else {
+            return formulaLive(summary, data);
+        }
     }
 }
 /**
