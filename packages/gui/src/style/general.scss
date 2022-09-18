@@ -34,6 +34,7 @@ nav {
         }
         &.disabled-row {
             color: darkslategray;
+            text-decoration: line-through;
             background-color: darken($color: $back-color, $amount: 50);
         }
         &:hover {
