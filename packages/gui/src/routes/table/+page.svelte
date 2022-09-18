@@ -56,7 +56,8 @@
                     : first.replicates[0]
                     ? typeof first.replicates[0][val]
                     : "undefined";
-                if (i === 0) {
+                // The first for columns are always visible
+                if (i < 4) {
                     style = style + " sticky";
                 }
                 cols.push({ val, style });
@@ -75,25 +76,21 @@
     }
 </script>
 
-<button on:click={() => saveFile("xlsx")} disabled={status !== Status.Ok}>
-    Save File as Excel
-</button>
-<button on:click={() => saveFile("ods")} disabled={status !== Status.Ok}>
-    Save File as OpenOffice
-</button>
+<div class="fixed-full-width">
+    <button on:click={() => saveFile("xlsx")} disabled={status !== Status.Ok}>
+        Save File as Excel
+    </button>
+    <button on:click={() => saveFile("ods")} disabled={status !== Status.Ok}>
+        Save File as OpenOffice
+    </button>
 
-<p class={Status[status]}>Status: {status.valueOf()}</p>
+    <p class={Status[status]}>Status: {status.valueOf()}</p>
+</div>
 
 <table id="table">
     <tr>
-        <!-- <th> Disabled </th>
-        <th> Notes (Required if Disabled) </th> -->
         {#each cols as col}
-            <th class={col.style}
-                >{col.val === "Notes"
-                    ? "Notes (Required if Disabled)"
-                    : col.val}</th
-            >
+            <th class={col.style}>{col.val}</th>
         {/each}
     </tr>
     {#each data as sample}
@@ -121,7 +118,12 @@
             summary={SummaryType.StdErr}
         />
 
-        <tr><p /> </tr>
+        <tr>
+            <td class="sticky" />
+            <td class="sticky" />
+            <td class="sticky" />
+            <td class="sticky" />
+        </tr>
     {/each}
 </table>
 

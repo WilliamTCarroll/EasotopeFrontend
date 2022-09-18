@@ -1,16 +1,27 @@
 $back-color: white;
 $back-err: red;
 $back-hover: slateblue;
+$sticky-width: 100px;
+$nav-height: 20px;
 
 .slot-parent {
-    top: 20px;
+    padding-top: $nav-height * 4;
 }
 
 nav {
-    position: -webkit-sticky;
-    position: sticky;
+    position: fixed;
+    height: $nav-height;
+    background-color: $back-color;
+    padding-left: 10px;
     top: 0;
-    // margin: 24px;
+    left: 0;
+    right: 0;
+    z-index: 20;
+}
+.fixed-full-width {
+    position: fixed;
+    top: $nav-height;
+    left: 10px;
 }
 
 .error {
@@ -26,7 +37,6 @@ nav {
     border-collapse: collapse;
     display: contents;
 
-    top: 10px;
     & tr {
         background-color: $back-color;
         &:nth-child(even) {
@@ -36,6 +46,7 @@ nav {
             color: darkslategray;
             text-decoration: line-through;
             background-color: darken($color: $back-color, $amount: 50);
+            z-index: 2;
         }
         &:hover {
             background-color: $back-hover;
@@ -47,31 +58,34 @@ nav {
 #table th {
     border: 1px solid black;
     padding: 8px;
-    $back-color-space: nowrap;
+    white-space: nowrap;
 }
-// TODO: Issues between this
+
 #table .sticky {
     position: -webkit-sticky;
     position: sticky;
-    left: 0;
-    z-index: 2;
+    z-index: 3;
     background-color: #04aa6d;
     border: 1px solid black;
+    // Ensure we have enough sticky entries, each aware of the last one
+    @for $i from 1 through 5 {
+        &:nth-child(#{$i}) {
+            min-width: $sticky-width;
+            left: #{$sticky-width * ($i - 1)};
+        }
+    }
 }
 
 #table th.sticky {
-    z-index: 3;
+    z-index: 10;
     margin-top: auto;
 }
 #table th {
-    padding-top: 12px;
-    padding-bottom: 12px;
     text-align: left;
     background-color: #04aa6d;
     color: white;
     position: -webkit-sticky;
     position: sticky;
-    top: 0;
-    z-index: 2;
-    margin-top: 96px;
+    top: $nav-height;
+    z-index: 3;
 }
