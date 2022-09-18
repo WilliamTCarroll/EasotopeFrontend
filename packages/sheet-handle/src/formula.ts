@@ -3,8 +3,7 @@ import { SummaryType } from "./columnConfig";
 import { standardDeviation, average as avg } from "simple-statistics";
 
 /**
- *  Attemt to generate the summary formula for the given range.\
- *  An error is returned if the `formulaName` is not recognized
+ *  Generate the summary formula for the given range
  */
 export function formula(formula: SummaryType, range: Range | string): string {
     switch (formula) {

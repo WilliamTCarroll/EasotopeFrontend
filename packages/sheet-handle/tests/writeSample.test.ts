@@ -55,7 +55,7 @@ describe("Writing Sample and Replicate to Xlsx", () => {
         sample.replicates = [inp, disabled, inp, inp];
         sample["Replicate"] = "DH1D";
         const start = { r: 0, c: 0 };
-        const out = colConfig.fullSampleArray(sample, start);
+        const out = colConfig.fullSampleArray(sample, start).arr;
         const exp = [
             [, "DH1D"],
             [
@@ -109,6 +109,8 @@ describe("Writing Sample and Replicate to Xlsx", () => {
                 ,
                 8.94,
             ],
+            ["average", , , , , , , , , , , , { t: "n", f: "AVERAGE(M1:M3)" }],
+            ["stdDev", , , , , , , , , , , , { t: "n", f: "STDEV(M1:M3)" }],
             [
                 "stdErr",
                 ,
@@ -126,8 +128,7 @@ describe("Writing Sample and Replicate to Xlsx", () => {
                 ,
                 { t: "n", f: "STDEV(O1:O3)/SQRT(COUNT(O1:O3))" },
             ],
-            ["average", , , , , , , , , , , , { t: "n", f: "AVERAGE(M1:M3)" }],
-            ["stdDev", , , , , , , , , , , , { t: "n", f: "STDEV(M1:M3)" }],
+
             [],
             ["Disabled Replicates Below"],
             [
@@ -231,6 +232,8 @@ describe("Writing Sample and Replicate to Xlsx", () => {
                 ,
                 8.94,
             ],
+            ["average", , , , , , , , , , , , { t: "n", f: "AVERAGE(M4:M6)" }],
+            ["stdDev", , , , , , , , , , , , { t: "n", f: "STDEV(M4:M6)" }],
             [
                 "stdErr",
                 ,
@@ -248,8 +251,7 @@ describe("Writing Sample and Replicate to Xlsx", () => {
                 ,
                 { t: "n", f: "STDEV(O4:O6)/SQRT(COUNT(O4:O6))" },
             ],
-            ["average", , , , , , , , , , , , { t: "n", f: "AVERAGE(M4:M6)" }],
-            ["stdDev", , , , , , , , , , , , { t: "n", f: "STDEV(M4:M6)" }],
+
             [],
             ["Disabled Replicates Below"],
             [
@@ -306,6 +308,22 @@ describe("Writing Sample and Replicate to Xlsx", () => {
                 8.94,
             ],
             [
+                "average",
+                ,
+                ,
+                ,
+                ,
+                ,
+                ,
+                ,
+                ,
+                ,
+                ,
+                ,
+                { t: "n", f: "AVERAGE(M15:M16)" },
+            ],
+            ["stdDev", , , , , , , , , , , , { t: "n", f: "STDEV(M15:M16)" }],
+            [
                 "stdErr",
                 ,
                 ,
@@ -322,22 +340,7 @@ describe("Writing Sample and Replicate to Xlsx", () => {
                 ,
                 { t: "n", f: "STDEV(O15:O16)/SQRT(COUNT(O15:O16))" },
             ],
-            [
-                "average",
-                ,
-                ,
-                ,
-                ,
-                ,
-                ,
-                ,
-                ,
-                ,
-                ,
-                ,
-                { t: "n", f: "AVERAGE(M15:M16)" },
-            ],
-            ["stdDev", , , , , , , , , , , , { t: "n", f: "STDEV(M15:M16)" }],
+
             [],
             ["Disabled Replicates Below"],
             [
@@ -394,6 +397,22 @@ describe("Writing Sample and Replicate to Xlsx", () => {
                 8.94,
             ],
             [
+                "average",
+                ,
+                ,
+                ,
+                ,
+                ,
+                ,
+                ,
+                ,
+                ,
+                ,
+                ,
+                { t: "n", f: "AVERAGE(M25:M26)" },
+            ],
+            ["stdDev", , , , , , , , , , , , { t: "n", f: "STDEV(M25:M26)" }],
+            [
                 "stdErr",
                 ,
                 ,
@@ -410,25 +429,9 @@ describe("Writing Sample and Replicate to Xlsx", () => {
                 ,
                 { t: "n", f: "STDEV(O25:O26)/SQRT(COUNT(O25:O26))" },
             ],
-            [
-                "average",
-                ,
-                ,
-                ,
-                ,
-                ,
-                ,
-                ,
-                ,
-                ,
-                ,
-                ,
-                { t: "n", f: "AVERAGE(M25:M26)" },
-            ],
-            ["stdDev", , , , , , , , , , , , { t: "n", f: "STDEV(M25:M26)" }],
         ];
         const samples = [s1, s2, s3];
-        const out = colConfig.fullSheetArray(samples);
+        const out = colConfig.fullSheetArray(samples).arr;
         {
             const book = generateOutput(samples, colConfig);
             // TODO: Add full test on output (including extra sheets with constants

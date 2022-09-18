@@ -88,27 +88,35 @@ export class ColumnConfig {
         return null;
     }
     /** Write the Sample to the given sheet */
-    public fullSheetArray(samples: Sample[]): any[][] {
+    public fullSheetArray(samples: Sample[]): {
+        arr: any[][];
+        sum: SummaryCellRow[];
+    } {
         const header: string[] = [];
         for (const entry of this.entries) {
             header.push(ColumnConfig.entryOut(entry));
         }
         const out: any[][] = [header];
+        const summaries: SummaryCellRow[] = [];
         // Generate each sample
         for (const sample of samples) {
             // Place a blank line between each Sample
             out.push([]);
             const addr = { c: 0, r: out.length + 1 };
             const lines = this.fullSampleArray(sample, addr);
-            out.push(...lines);
+            out.push(...lines.arr);
+            summaries.push(lines.summary);
         }
-        return out;
+        return { arr: out, sum: summaries };
     }
     /**
      *  Generate the array for the sample at the start address.\
      *  All stored Replicates are written, as well.
      */
-    public fullSampleArray(sample: Sample, start: CellAddress): any[][] {
+    public fullSampleArray(
+        sample: Sample,
+        start: CellAddress
+    ): { arr: any[][]; summary: SummaryCellRow } {
         const header: any[] = [];
         this.entries.forEach((entry, c) => {
             const val = sample[ColumnConfig.entryOut(entry)];
@@ -128,20 +136,24 @@ export class ColumnConfig {
         }
         // Figure up the calculations
         const lastRow = start.r + enabled.length - 1;
-        const calcs: { [key: string]: any[] } = {};
+        const calcs: SummaryRow = {} as SummaryRow;
         this.entries.forEach((entry, c) => {
             if (entry.summary) {
+                const head = ColumnConfig.entryOut(entry);
                 for (const s of entry.summary) {
                     // Ensure we have anything at all in the array
                     // First entry is the title of this summary
-                    calcs[s] = calcs[s] || [s];
+                    calcs[s] = calcs[s] || [{ head, val: s }];
                     const range: Range = {
                         s: { c, r: start.r },
                         e: { c, r: lastRow },
                     };
                     const val = formula(s, range);
 
-                    calcs[s][c] = { f: val, t: "n" };
+                    calcs[s][c] = {
+                        head,
+                        val: { f: val, t: "n" },
+                    };
                 }
             }
         });
@@ -150,13 +162,41 @@ export class ColumnConfig {
             disabled.unshift(["Disabled Replicates Below"]);
             disabled.unshift([]);
         }
-        for (const key in calcs) {
-            enabled.push(calcs[key]);
+        // First, push the summaries.
+        for (const key of Object.values(SummaryType)) {
+            const row = [key as any]; // Start the row with the summary type
+            for (let c = 0; c < calcs[key].length; c++) {
+                const val = calcs[key][c];
+                // Only set this entry if we have a summary, here
+                if (val) {
+                    row[c] = val.val;
+                }
+            }
+
+            enabled.push(row);
         }
 
-        const out = [header, ...enabled, ...disabled];
+        const summary = {
+            sample: sample["Sample"] || sample["Replicate"],
+            row: {},
+        } as SummaryCellRow;
+        // Now, collect the references for the summary sheet
+        // The order is important; we go by the ColumnConfig order
+        for (const entry of this.entries) {
+            for (const key of entry.summary || []) {
+                for (let c = 0; c < calcs[key].length; c++) {
+                    const val = calcs[key][c];
+                    if (val) {
+                        const name = `${val.head}: ${key}`;
+                        // Each summary has an offset, depending on their order
+                        const r = lastRow + sumOffset(key);
+                        summary.row[name] = { r, c } as CellAddress;
+                    }
+                }
+            }
+        }
 
-        return out;
+        return { arr: [header, ...enabled, ...disabled], summary };
     }
     /** Generate the array of Excel values for this replicate */
     public replicateArray(replicate: Replicate): any[] {
@@ -183,6 +223,17 @@ export enum SummaryType {
     Average = "average",
     StdDev = "stdDev",
     StdErr = "stdErr",
+}
+/** What is the row offset for the given Symmary? */
+function sumOffset(sum: SummaryType): number {
+    switch (sum) {
+        case SummaryType.Average:
+            return 1;
+        case SummaryType.StdDev:
+            return 2;
+        case SummaryType.StdErr:
+            return 3;
+    }
 }
 /**
  * Attempt to parse a list of summaries from the given array
@@ -229,4 +280,13 @@ export function parseOneSummary(inp: string): SummaryType | Error | undefined {
             return Error(`Unknown formula: ${inp}`);
     }
 }
+/** Representation of the summary data on the Calculation Sheet */
+type SummaryRow = {
+    [key in SummaryType]: { head: string; val: { f: string; t: string } }[];
+};
+/** Representation of Summary Data on the Summary Sheet */
+export type SummaryCellRow = {
+    sample: string;
+    row: { [key: string]: CellAddress };
+};
 export const defaultConfig = new ColumnConfig(config);
