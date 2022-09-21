@@ -16,6 +16,14 @@
         noteClass = isError ? ERR_CLASS : "";
         rowClass = data.Disabled ? "disabled-row" : "";
     }
+    /**
+     *  Get the Display Value for the given key of the stored data
+     *  Properly displays the number `0` as `0`, rather than considering it a blank value.
+     */
+    function display(key: string): any {
+        const val = data[key];
+        return typeof val === "number" ? val : val || "";
+    }
 </script>
 
 <tr class={rowClass}>
@@ -45,7 +53,7 @@
                     />
                 </div>
             {:else}
-                {data[col.val] || ""}
+                {display(col.val)}
             {/if}
         </td>
     {/each}
