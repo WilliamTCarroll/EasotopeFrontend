@@ -34,8 +34,10 @@ nav {
 
 #table {
     font-family: Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    display: contents;
+    // Actually displays borders when using this VS `border-collapse`
+    border-spacing: 0px;
+    // Requried for Sticky elements and Chrome
+    display: inline-block;
 
     & tr {
         background-color: $back-color;
@@ -52,21 +54,18 @@ nav {
             background-color: $back-hover;
         }
     }
+    td,
+    th {
+        border: 1px solid black;
+        padding: 4px;
+        white-space: nowrap;
+    }
 }
-
-#table td,
-#table th {
-    border: 1px solid black;
-    padding: 8px;
-    white-space: nowrap;
-}
-
 #table .sticky {
     position: -webkit-sticky;
     position: sticky;
     z-index: 3;
     background-color: #04aa6d;
-    border: 1px solid black;
     // Ensure we have enough sticky entries, each aware of the last one
     @for $i from 1 through 5 {
         &:nth-child(#{$i}) {
