@@ -1,7 +1,7 @@
 <script lang="ts">
     import { Sample, type Replicate, type SummaryType } from "sheet-handle";
 
-    import { ERR_CLASS } from "../../stores";
+    import { ERR_CLASS, getColumnConfig } from "../../stores";
     export let data: Replicate | Sample;
     export let cols: { val: string; style: string }[] = [];
     export let showDisabled = true;
@@ -10,6 +10,7 @@
     let isError = false;
     let noteClass = "";
     let rowClass = "";
+    const config = getColumnConfig();
     // Update the stored values reactively
     $: {
         isError = data.Disabled && data.Notes.trim().length === 0;
@@ -31,10 +32,12 @@
         <td class={col.style}>
             {#if summary}
                 {#if col.style === "number" && data instanceof Sample}
-                    {data.summary(summary, col.val)}
+                    {data.summary(summary, col.val, config)}
                 {:else if col.val === "Replicate"}
+                    <!-- Display the kind of summary we have -->
                     {summary.valueOf()}
                 {:else if col.val === "Sample"}
+                    <!-- Display what sample callout we are looking at -->
                     {data[col.val]}
                 {/if}
             {:else if col.val === "Disabled" && showDisabled}

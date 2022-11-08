@@ -1,7 +1,7 @@
 import { Sample } from "./sample";
 import { CellObject, utils, WorkBook, writeFile } from "xlsx";
 import type { WritingOptions } from "xlsx";
-import { ColumnConfig, SummaryCellRow } from "./columnConfig";
+import { ColumnConfig, SummaryCellRow, SummaryType } from "./columnConfig";
 
 /** The name of the `Data Calculations` Sheet */
 export const DATA_CALC = "Data Calculations";
@@ -33,7 +33,9 @@ function summaryToArr(sum: SummaryCellRow[], colConfig: ColumnConfig): any[][] {
         const row: CellObject[] = [{ v: item.sample, t: "s" }];
         // Collect the summary in the order of the config file
         for (const entry of colConfig.entries) {
-            for (const summary of entry.summary || []) {
+            if (!entry.summary) continue;
+            for (const key in SummaryType) {
+                const summary = key as SummaryType;
                 // What is the name of this report item?
                 const head = ColumnConfig.entryOut(entry);
                 const name = `${head}: ${summary}`;

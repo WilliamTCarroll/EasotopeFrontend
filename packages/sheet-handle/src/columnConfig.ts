@@ -40,25 +40,19 @@ export class ColumnConfig {
         const from = inp["from"];
         if (!!from) {
             const to = inp["to"];
-            const sumBefore = inp["summary"];
-            const summary = parseSummary(sumBefore);
-
-            if (summary instanceof Error) {
-                return summary;
-            } else {
-                return { from, to, summary };
-            }
+            const summary = !!inp["summary"];
+            return { from, to, summary };
         } else {
             return { from: inp } as Entry;
         }
     }
     /** Get the input column name for the given entry */
     static entryFrom(entry: Entry): string {
-        return typeof entry === "string" ? entry : entry.from;
+        return entry.from;
     }
     /** Get the output column name for the given entry */
     static entryOut(entry: Entry): string {
-        return typeof entry === "string" ? entry : entry.to || entry.from;
+        return entry.to || entry.from;
     }
     /**
      * Attempt to find the column header in the stored entries.
@@ -140,7 +134,8 @@ export class ColumnConfig {
         this.entries.forEach((entry, c) => {
             if (entry.summary) {
                 const head = ColumnConfig.entryOut(entry);
-                for (const s of entry.summary) {
+                for (const key in SummaryType) {
+                    const s = key as SummaryType;
                     // Ensure we have anything at all in the array
                     // First entry is the title of this summary
                     calcs[s] = calcs[s] || [{ head, val: s }];
@@ -183,13 +178,15 @@ export class ColumnConfig {
         // Now, collect the references for the summary sheet
         // The order is important; we go by the ColumnConfig order
         for (const entry of this.entries) {
-            for (const key of entry.summary || []) {
-                for (let c = 0; c < calcs[key].length; c++) {
-                    const val = calcs[key][c];
+            if (!entry.summary) continue;
+            for (const key in SummaryType) {
+                const s = key as SummaryType;
+                for (let c = 0; c < calcs[s].length; c++) {
+                    const val = calcs[s][c];
                     if (val) {
                         const name = `${val.head}: ${key}`;
                         // Each summary has an offset, depending on their order
-                        const r = lastRow + sumOffset(key);
+                        const r = lastRow + sumOffset(s);
                         summary.row[name] = { r, c } as CellAddress;
                     }
                 }
@@ -211,18 +208,23 @@ export class ColumnConfig {
 
         return out;
     }
+    /** Check if the given column and summary combo exists */
+    public hasSummary(column: string): boolean {
+        const entry = this.entries.find((val) => val.from == column || val.to == column);
+        return entry ? entry.summary : false;
+    }
 }
 /** An entry found in the `ColumnConfig` file */
 type Entry = {
     from: string;
     to: string | undefined;
-    summary: SummaryType[] | undefined;
+    summary: boolean;
 };
 /** The kinds of Summary that could possibly be done for this field */
 export enum SummaryType {
-    Average = "average",
-    StdDev = "stdDev",
-    StdErr = "stdErr",
+    Average = "Average",
+    StdDev = "StdDev",
+    StdErr = "StdErr",
 }
 /** What is the row offset for the given Symmary? */
 function sumOffset(sum: SummaryType): number {
