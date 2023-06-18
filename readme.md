@@ -17,7 +17,7 @@ NOTE: Many of the sections below are general notes, and will be modified/cleaned
 
 # Getting Started
 
-This uses `lerna` for workspace handling. Tests and dev scripts can be ran with it, and
+This uses native NPM for workspace handling. Tests and dev scripts can be ran with it, and
 
 1. Clone the repo
 2. Open a terminal in the project directory.
