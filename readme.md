@@ -22,7 +22,7 @@ This uses native NPM for workspace handling. Tests and dev scripts can be ran wi
 1. Clone the repo
 2. Open a terminal in the project directory.
 3. `npm i` to download requirements
-4. `npm run build` (This runs `npm i`, then builds all directories, and links the local dependencies)
+4. `npm run build` (This runs `npm run build` on all stored packages)
 5. `npm run dev` (loads up a dev instance of the server)
 
 ## GUI
